@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Online Tools Hub - Word Counter & Password Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f7f6; margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 700px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #2c3e50; }
+        .tool-box { margin-bottom: 30px; padding: 20px; background: #fafafa; border: 1px solid #ddd; border-radius: 8px; }
+        textarea, input { width: 100%; padding: 10px; margin-top: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        button { background: #3498db; color: white; border: none; padding: 10px 20px; margin-top: 10px; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #2980b9; }
+        .result { margin-top: 10px; font-weight: bold; color: #27ae60; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🛠️ Free Online Tools Hub</h1>
+
+    <!-- Tool 1: Word & Character Counter -->
+    <div class="tool-box">
+        <h3>Word & Character Counter</h3>
+        <textarea id="textInput" rows="4" placeholder="Yahan apna text paste karein..."></textarea>
+        <div class="result" id="wordCountResult">Words: 0 | Characters: 0</div>
+    </div>
+
+    <!-- Tool 2: Password Generator -->
+    <div class="tool-box">
+        <h3>Secure Password Generator</h3>
+        <button onclick="generatePassword()">Generate Password</button>
+        <input type="text" id="passwordResult" readonly placeholder="Aapka secure password yahan dikhega">
+    </div>
+</div>
+
+<script>
+    // Word Counter Logic
+    const textInput = document.getElementById('textInput');
+    const wordCountResult = document.getElementById('wordCountResult');
+
+    textInput.addEventListener('input', () => {
+        const text = textInput.value.trim();
+        const words = text === '' ? 0 : text.split(/\s+/).length;
+        const chars = text.length;
+        wordCountResult.innerText = `Words: ${words} | Characters: ${chars}`;
+    });
+
+    // Password Generator Logic
+    function generatePassword() {
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&*!";
+        let password = "";
+        for (let i = 0; i < 12; i++) {
+            password += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        document.getElementById('passwordResult').value = password;
+    }
+</script>
+
+</body>
+</html>
