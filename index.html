@@ -2,724 +2,579 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Online Tools Hub — Word Counter, Password Generator, JSON Formatter, Base64 & Case Converter</title>
-<meta name="description" content="Free online toolbox with 5 fast utilities: word & character counter with reading time, secure password generator, text case converter, JSON beautifier, and Base64 encoder/decoder. No sign-up, works instantly in your browser.">
-<meta name="keywords" content="word counter, character counter, password generator, text case converter, json formatter, json beautifier, base64 encode decode, online tools, free tools">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://example.com/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
+<!-- ============ SEO META TAGS ============ -->
+<title>ToolForge — Free Online Word Counter, JSON Formatter, Password Generator & QR Code Generator</title>
+<meta name="description" content="ToolForge is a free all-in-one online toolbox: word & character counter, text case converter, JSON formatter/validator, secure password generator, and QR code generator. Fast, private, works in your browser — no signup needed.">
+<meta name="keywords" content="word counter, character counter, case converter, json formatter, json validator, password generator, qr code generator, online tools, free developer tools, text tools">
+<meta name="author" content="ToolForge">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://your-domain.vercel.app/">
+
+<!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Free Online Tools Hub — Word Counter, Password Generator, JSON Formatter & More">
-<meta property="og:description" content="5 fast, free browser-based tools: word counter, password generator, case converter, JSON formatter and Base64 encoder/decoder.">
-<meta property="og:url" content="https://example.com/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Free Online Tools Hub">
-<meta name="twitter:description" content="5 fast, free browser-based utilities. No sign-up required.">
+<meta property="og:title" content="ToolForge — Free Online Word Counter, JSON Formatter, Password Generator & QR Generator">
+<meta property="og:description" content="One free toolbox for the internet's most-used utilities: word counter, case converter, JSON formatter, password generator, and QR code generator. No signup, runs instantly in your browser.">
+<meta property="og:url" content="https://your-domain.vercel.app/">
+<meta property="og:site_name" content="ToolForge">
 
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ToolForge — Free Online Utility Toolbox">
+<meta name="twitter:description" content="Word counter, case converter, JSON formatter, password generator & QR generator — all free, all instant, all in your browser.">
+
+<!-- Favicon (inline SVG, no extra file needed) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%2316181C'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='%23FFB020' font-family='sans-serif' font-weight='700'%3ET%3C/text%3E%3C/svg%3E">
+
+<!-- Structured Data: WebApplication -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Free Online Tools Hub",
-  "applicationCategory": "Utility",
-  "operatingSystem": "Any",
+  "name": "ToolForge",
+  "url": "https://your-domain.vercel.app/",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (Web Browser)",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free online toolbox with word counter, case converter, JSON formatter, password generator, and QR code generator.",
   "featureList": [
-    "Word & Character Counter",
-    "Secure Password Generator",
-    "Text Case Converter",
-    "JSON Beautifier",
-    "Base64 Encoder/Decoder"
+    "Word and character counter",
+    "Text case converter",
+    "JSON formatter and validator",
+    "Secure password generator",
+    "QR code generator"
   ]
 }
 </script>
 
+<!-- Google AdSense: paste your AdSense verification/auto-ads script tag here -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+<!-- Fonts: Space Grotesk (display/utility) + Inter (body) + JetBrains Mono (data/output) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- QR Code generation library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
 <style>
   :root{
-    --ink:#152238;
-    --ink-soft:#2c3b57;
-    --paper:#f4f5f1;
-    --panel:#ffffff;
-    --line:#d9dcd3;
-    --brass:#c98a2e;
-    --brass-dark:#a86f1f;
-    --teal:#1f7a63;
-    --teal-soft:#e6f2ee;
-    --mono: 'IBM Plex Mono', 'Courier New', monospace;
-    --sans: 'Space Grotesk', 'Segoe UI', sans-serif;
-    --body: 'Inter', 'Segoe UI', sans-serif;
-    --radius: 3px;
+    --bg:#16181C;
+    --surface:#1E2126;
+    --surface-2:#242830;
+    --border:#2C3038;
+    --text:#E8E6E1;
+    --text-dim:#9AA0AA;
+    --amber:#FFB020;
+    --teal:#4DD9C0;
+    --danger:#FF6B5E;
+    --radius:10px;
   }
-
-  * { box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
   body{
     margin:0;
-    font-family: var(--body);
-    background:
-      linear-gradient(var(--paper), var(--paper)),
-      repeating-linear-gradient(0deg, rgba(21,34,56,0.035) 0, rgba(21,34,56,0.035) 1px, transparent 1px, transparent 24px),
-      repeating-linear-gradient(90deg, rgba(21,34,56,0.035) 0, rgba(21,34,56,0.035) 1px, transparent 1px, transparent 24px);
-    color: var(--ink);
-    -webkit-font-smoothing: antialiased;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.5;
   }
-
-  a { color: inherit; }
-
-  /* ---------- Header ---------- */
-  header.site{
-    background: var(--ink);
-    color: #f4f5f1;
-    padding: 18px 20px;
-    border-bottom: 4px solid var(--brass);
-  }
-  .site-inner{
-    max-width: 980px;
-    margin: 0 auto;
-    display:flex;
-    align-items:center;
-    justify-content: space-between;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-  .brand{
-    display:flex;
-    align-items:baseline;
-    gap: 10px;
-  }
-  .brand-mark{
-    font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    background: var(--brass);
-    color: var(--ink);
-    padding: 3px 7px;
-    border-radius: 2px;
-    font-weight: 700;
-  }
-  .brand h1{
-    font-family: var(--sans);
-    font-size: 22px;
-    margin: 0;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-  }
-  .brand span.sub{
-    display:block;
-    font-family: var(--mono);
-    font-size: 11px;
-    color: #b9c3d6;
-    letter-spacing: 0.08em;
-    margin-top: 2px;
-    font-weight: 400;
-  }
-  nav.tabs{
-    display:flex;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-  nav.tabs button{
-    font-family: var(--mono);
-    font-size: 12px;
-    background: #1e2f4d;
-    color: #d7ddea;
-    border: 1px solid #33456b;
-    border-bottom: none;
-    padding: 8px 12px;
-    border-radius: 3px 3px 0 0;
-    cursor: pointer;
-    letter-spacing: 0.02em;
-    transition: background .15s, color .15s;
-  }
-  nav.tabs button:hover{ background:#28406a; color:#fff; }
-  nav.tabs button.active{
-    background: var(--paper);
-    color: var(--ink);
-    border-color: var(--line);
-  }
-
-  /* ---------- Layout ---------- */
-  main{
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 24px 20px 60px;
-  }
-
-  .ad-slot{
-    background: var(--panel);
-    border: 1px dashed #b7bcae;
-    border-radius: var(--radius);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color: #8b8f80;
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin: 22px 0;
-  }
-  .ad-leaderboard{ min-height: 90px; }
-  .ad-infeed{ min-height: 90px; }
-  .ad-footer{ min-height: 110px; }
-
-  .tool-section{ display:none; }
-  .tool-section.active{ display:block; }
-
-  .tool-card{
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    padding: 22px 24px 26px;
-    position: relative;
-    box-shadow: 0 1px 0 rgba(21,34,56,0.03);
-  }
-  .tool-card::before{
-    content: attr(data-id);
-    position:absolute;
-    top: -11px;
-    left: 20px;
-    background: var(--brass);
-    color: var(--ink);
-    font-family: var(--mono);
-    font-size: 11px;
+  h1,h2,h3,.display{
+    font-family:'Space Grotesk',sans-serif;
     font-weight:700;
-    padding: 3px 9px;
-    border-radius: 2px;
-    letter-spacing: 0.05em;
+    letter-spacing:-0.01em;
   }
-  .tool-card h2{
-    font-family: var(--sans);
-    font-size: 20px;
-    margin: 6px 0 4px;
+  code,pre,textarea,.mono,input[type="text"],.output-box{
+    font-family:'JetBrains Mono',monospace;
   }
-  .tool-card p.desc{
-    color: var(--ink-soft);
-    font-size: 14px;
-    margin: 0 0 18px;
-  }
+  a{color:var(--amber);}
+  ::selection{background:var(--amber);color:#16181C;}
 
-  label.field-label{
-    display:block;
-    font-family: var(--mono);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--ink-soft);
-    margin: 14px 0 6px;
+  /* Skip link for accessibility */
+  .skip-link{
+    position:absolute;left:-999px;top:0;background:var(--amber);color:#16181C;
+    padding:10px 16px;z-index:200;font-weight:600;border-radius:0 0 8px 0;
   }
+  .skip-link:focus{left:0;}
 
-  textarea, input[type="text"], input[type="number"], select{
+  /* ===== Header / Hazard strip signature ===== */
+  .hazard-strip{
+    height:6px;
+    background:repeating-linear-gradient(135deg,var(--amber) 0 14px,#16181C 14px 28px);
+  }
+  header.site{
+    border-bottom:1px solid var(--border);
+    background:var(--bg);
+    position:sticky;top:0;z-index:100;
+  }
+  .header-inner{
+    max-width:1100px;margin:0 auto;padding:16px 20px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand-mark{
+    width:34px;height:34px;border-radius:8px;background:var(--amber);
+    display:flex;align-items:center;justify-content:center;
+    color:#16181C;font-family:'Space Grotesk';font-weight:700;font-size:18px;
+    flex:none;
+  }
+  .brand-name{font-size:19px;}
+  .brand-tag{font-size:12px;color:var(--text-dim);font-family:'JetBrains Mono';}
+
+  /* ===== Toolbelt tab bar (signature element) ===== */
+  nav.toolbelt{
+    max-width:1100px;margin:0 auto;padding:0 20px 14px;
+    display:flex;gap:8px;overflow-x:auto;
+    scrollbar-width:thin;
+  }
+  nav.toolbelt::-webkit-scrollbar{height:5px;}
+  nav.toolbelt::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
+  .tab-btn{
+    flex:none;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-bottom:3px solid var(--border);
+    color:var(--text-dim);
+    padding:9px 16px;
+    border-radius:8px 8px 4px 4px;
+    font-family:'Space Grotesk';font-weight:600;font-size:13.5px;
+    cursor:pointer;white-space:nowrap;
+    transition:color .15s, border-color .15s, background .15s;
+  }
+  .tab-btn:hover{color:var(--text);background:var(--surface-2);}
+  .tab-btn.active{
+    color:var(--bg);background:var(--amber);
+    border-color:var(--amber);border-bottom-color:#c9871a;
+  }
+  .tab-btn:focus-visible{outline:2px solid var(--teal);outline-offset:2px;}
+
+  main{max-width:1100px;margin:0 auto;padding:28px 20px 60px;}
+
+  .layout{display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:start;}
+  @media (max-width:900px){.layout{grid-template-columns:1fr;}}
+
+  .panel{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:22px;
+    margin-bottom:20px;
+  }
+  .panel h2{font-size:20px;margin:0 0 4px;}
+  .panel .desc{color:var(--text-dim);font-size:13.5px;margin:0 0 18px;}
+
+  .tool-view{display:none;}
+  .tool-view.active{display:block;}
+
+  textarea, .text-input{
     width:100%;
-    padding: 11px 12px;
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    background: #fbfbf9;
-    font-family: var(--mono);
-    font-size: 14px;
-    color: var(--ink);
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:8px;
+    color:var(--text);
+    padding:12px 14px;
+    font-size:14px;
+    resize:vertical;
   }
-  textarea:focus, input:focus, select:focus, button:focus-visible{
-    outline: 2px solid var(--brass);
-    outline-offset: 1px;
-    border-color: var(--brass);
+  textarea:focus, .text-input:focus, select:focus{
+    outline:2px solid var(--teal);outline-offset:1px;border-color:var(--teal);
   }
-  textarea{ resize: vertical; min-height: 120px; }
+  label{font-size:12.5px;color:var(--text-dim);display:block;margin-bottom:6px;font-weight:500;}
 
   .btn{
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: 14px;
-    background: var(--ink);
-    color: #fff;
-    border: none;
-    padding: 10px 18px;
-    border-radius: var(--radius);
-    cursor: pointer;
-    transition: background .15s;
+    background:var(--amber);color:#16181C;border:none;
+    font-family:'Space Grotesk';font-weight:600;font-size:13.5px;
+    padding:10px 18px;border-radius:7px;cursor:pointer;
+    transition:transform .1s, background .15s;
   }
-  .btn:hover{ background: var(--ink-soft); }
-  .btn.brass{ background: var(--brass); color: var(--ink); }
-  .btn.brass:hover{ background: var(--brass-dark); color:#fff; }
-  .btn.ghost{
-    background: transparent;
-    color: var(--ink);
-    border: 1px solid var(--line);
-  }
-  .btn.ghost:hover{ background:#f0f1ec; }
+  .btn:hover{background:#ffc154;}
+  .btn:active{transform:scale(.97);}
+  .btn.secondary{background:var(--surface-2);color:var(--text);border:1px solid var(--border);}
+  .btn.secondary:hover{background:#2b3038;}
+  .btn.teal{background:var(--teal);color:#0d1f1b;}
+  .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;}
 
-  .btn-row{ display:flex; gap:10px; flex-wrap: wrap; margin-top: 14px; }
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px;}
+  @media (max-width:600px){.stat-grid{grid-template-columns:repeat(2,1fr);}}
+  .stat-box{
+    background:var(--bg);border:1px solid var(--border);border-radius:8px;
+    padding:12px;text-align:center;
+  }
+  .stat-num{font-family:'JetBrains Mono';font-size:22px;font-weight:600;color:var(--amber);}
+  .stat-label{font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.04em;margin-top:2px;}
 
-  .readout{
-    margin-top: 18px;
-    background: var(--teal-soft);
-    border: 1px solid #bfe0d5;
-    border-radius: var(--radius);
-    padding: 12px 14px;
-    display:flex;
-    gap: 22px;
-    flex-wrap: wrap;
-    font-family: var(--mono);
-    font-size: 13px;
-    color: #14503f;
+  .output-box{
+    background:var(--bg);border:1px solid var(--border);border-radius:8px;
+    padding:14px;white-space:pre-wrap;word-break:break-word;font-size:13.5px;
+    min-height:60px;margin-top:12px;
   }
-  .readout .stat b{
-    display:block;
-    font-size: 18px;
-    color: var(--teal);
+  .row-inline{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+  .chip-group{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+  .chip{
+    background:var(--surface-2);border:1px solid var(--border);color:var(--text);
+    padding:7px 12px;border-radius:20px;font-size:12.5px;cursor:pointer;
   }
+  .chip:hover{border-color:var(--amber);}
 
-  .opt-row{
-    display:flex;
-    gap: 18px;
-    flex-wrap: wrap;
-    margin-top: 12px;
-  }
-  .opt-row label{
-    font-size: 13px;
-    display:flex;
-    align-items:center;
-    gap: 6px;
-    font-family: var(--body);
-    color: var(--ink-soft);
-  }
-  .opt-row input[type="checkbox"]{ width:auto; accent-color: var(--brass); }
+  .status-ok{color:var(--teal);font-weight:600;}
+  .status-bad{color:var(--danger);font-weight:600;}
 
-  .range-wrap{ display:flex; align-items:center; gap: 12px; margin-top:8px; }
-  .range-wrap input[type="range"]{ flex:1; accent-color: var(--brass); }
-  .range-wrap .len-val{
-    font-family: var(--mono);
-    background: var(--ink);
-    color:#fff;
-    padding: 4px 10px;
-    border-radius: var(--radius);
-    font-size: 13px;
-    min-width: 34px;
-    text-align:center;
-  }
+  .toggle-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);}
+  .toggle-row:last-child{border-bottom:none;}
+  .toggle-row span{font-size:13.5px;}
 
-  .pass-output{
-    display:flex;
-    gap:10px;
-    margin-top: 14px;
-  }
-  .pass-output input{
-    flex:1;
-    font-size: 16px;
-    letter-spacing: 0.03em;
-  }
+  input[type="range"]{width:100%;accent-color:var(--amber);}
+  input[type="checkbox"]{accent-color:var(--amber);width:16px;height:16px;}
 
-  .case-grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px,1fr));
-    gap: 10px;
-    margin-top: 14px;
-  }
+  #qr-canvas-wrap{display:flex;justify-content:center;padding:18px;background:#fff;border-radius:8px;margin-top:14px;}
 
-  .error-line{
-    margin-top: 12px;
-    font-family: var(--mono);
-    font-size: 13px;
-    color: #a3312a;
-    background: #fbeceb;
-    border: 1px solid #edc2be;
-    padding: 8px 12px;
-    border-radius: var(--radius);
-    display:none;
+  /* ===== Ad slots ===== */
+  .ad-slot{
+    background:var(--surface);
+    border:1px dashed var(--border);
+    border-radius:var(--radius);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--text-dim);font-size:12px;font-family:'JetBrains Mono';
+    text-align:center;padding:10px;
   }
-  .error-line.show{ display:block; }
+  .ad-slot span{opacity:.6;}
+  .ad-leaderboard{min-height:90px;margin:0 0 24px;}
+  .ad-sidebar{min-height:250px;}
+  .ad-in-content{min-height:100px;margin:24px 0;}
+  .ad-footer{min-height:90px;margin-top:30px;}
 
-  .copy-note{
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--teal);
-    margin-left: 8px;
-    opacity:0;
-    transition: opacity .2s;
+  /* ===== SEO content blocks ===== */
+  .seo-block{padding:6px 2px 2px;color:var(--text-dim);font-size:13.5px;}
+  .seo-block h2,.seo-block h3{color:var(--text);}
+  .faq-item{border-bottom:1px solid var(--border);padding:14px 0;}
+  .faq-item:last-child{border-bottom:none;}
+  .faq-item h3{font-size:15px;margin:0 0 6px;}
+  .faq-item p{margin:0;font-size:13.5px;}
+
+  footer{
+    border-top:1px solid var(--border);
+    text-align:center;padding:26px 20px;color:var(--text-dim);font-size:12.5px;
   }
-  .copy-note.show{ opacity:1; }
+  footer a{color:var(--text-dim);text-decoration:underline;}
 
-  footer.site{
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 10px 20px 40px;
-    color: var(--ink-soft);
-    font-family: var(--mono);
-    font-size: 12px;
-    text-align:center;
-  }
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
 
-  @media (max-width: 600px){
-    .brand h1{ font-size:18px; }
-    nav.tabs button{ font-size: 11px; padding: 7px 9px; }
-    .tool-card{ padding: 18px 16px 20px; }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
   }
 </style>
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to content</a>
+<div class="hazard-strip"></div>
+
 <header class="site">
-  <div class="site-inner">
+  <div class="header-inner">
     <div class="brand">
-      <span class="brand-mark">TOOLBOX</span>
+      <div class="brand-mark" aria-hidden="true">T</div>
       <div>
-        <h1>Free Online Tools Hub</h1>
-        <span class="sub">5 utilities · runs entirely in your browser</span>
+        <div class="brand-name">ToolForge</div>
+        <div class="brand-tag">// five tools, one page, zero signup</div>
       </div>
     </div>
-    <nav class="tabs" aria-label="Tool selector">
-      <button class="tab-btn active" data-target="tool-counter" aria-current="true">T-01 Word Counter</button>
-      <button class="tab-btn" data-target="tool-password">T-02 Password Gen</button>
-      <button class="tab-btn" data-target="tool-case">T-03 Case Converter</button>
-      <button class="tab-btn" data-target="tool-json">T-04 JSON Formatter</button>
-      <button class="tab-btn" data-target="tool-base64">T-05 Base64</button>
-    </nav>
   </div>
+  <nav class="toolbelt" aria-label="Tool selector">
+    <button class="tab-btn active" data-tool="counter" onclick="showTool('counter')">Word Counter</button>
+    <button class="tab-btn" data-tool="case" onclick="showTool('case')">Case Converter</button>
+    <button class="tab-btn" data-tool="json" onclick="showTool('json')">JSON Formatter</button>
+    <button class="tab-btn" data-tool="password" onclick="showTool('password')">Password Generator</button>
+    <button class="tab-btn" data-tool="qr" onclick="showTool('qr')">QR Generator</button>
+  </nav>
 </header>
 
-<main>
+<!-- Top ad slot -->
+<main id="main-content">
+  <div class="ad-slot ad-leaderboard" aria-label="Advertisement">
+    <span>AD SLOT — 728x90 Leaderboard (paste AdSense unit here)</span>
+  </div>
 
-  <!-- Leaderboard ad slot: below header -->
-  <div class="ad-slot ad-leaderboard" id="ad-leaderboard"><!-- AdSense leaderboard unit goes here --> Ad space · 728×90 leaderboard</div>
+  <div class="layout">
+    <div>
 
-  <h2 style="font-family:var(--sans); font-size:15px; color:var(--ink-soft); margin:0 0 10px; text-transform:uppercase; letter-spacing:.06em;">Choose a tool</h2>
+      <!-- ============ TOOL 1: WORD & CHARACTER COUNTER ============ -->
+      <section class="tool-view active panel" id="tool-counter" aria-labelledby="h-counter">
+        <h2 id="h-counter">Word &amp; Character Counter</h2>
+        <p class="desc">Paste or type your text below to instantly count words, characters, sentences, and reading time — free, private, and processed entirely in your browser.</p>
+        <label for="counter-input">Your text</label>
+        <textarea id="counter-input" rows="8" placeholder="Start typing or paste your text here..." oninput="updateCounter()"></textarea>
+        <div class="stat-grid">
+          <div class="stat-box"><div class="stat-num" id="c-words">0</div><div class="stat-label">Words</div></div>
+          <div class="stat-box"><div class="stat-num" id="c-chars">0</div><div class="stat-label">Characters</div></div>
+          <div class="stat-box"><div class="stat-num" id="c-sentences">0</div><div class="stat-label">Sentences</div></div>
+          <div class="stat-box"><div class="stat-num" id="c-time">0s</div><div class="stat-label">Read time</div></div>
+        </div>
+        <div class="btn-row">
+          <button class="btn secondary" onclick="document.getElementById('counter-input').value='';updateCounter()">Clear text</button>
+        </div>
+      </section>
 
-  <!-- ================= TOOL 1: Word & Character Counter ================= -->
-  <section class="tool-section active" id="tool-counter">
-    <div class="tool-card" data-id="T-01">
-      <h2>Word &amp; Character Counter</h2>
-      <p class="desc">Paste or type text to instantly see word count, character count, sentence count, and estimated reading time.</p>
-
-      <label class="field-label" for="textInput">Your text</label>
-      <textarea id="textInput" rows="7" placeholder="Paste your text here..."></textarea>
-
-      <div class="readout">
-        <div class="stat"><b id="wcWords">0</b>Words</div>
-        <div class="stat"><b id="wcChars">0</b>Characters</div>
-        <div class="stat"><b id="wcCharsNoSpace">0</b>Chars (no spaces)</div>
-        <div class="stat"><b id="wcSentences">0</b>Sentences</div>
-        <div class="stat"><b id="wcReadTime">0 min</b>Reading time</div>
+      <div class="ad-slot ad-in-content" aria-label="Advertisement">
+        <span>AD SLOT — In-content responsive unit (paste AdSense unit here)</span>
       </div>
+
+      <!-- ============ TOOL 2: CASE CONVERTER ============ -->
+      <section class="tool-view panel" id="tool-case" aria-labelledby="h-case">
+        <h2 id="h-case">Text Case Converter</h2>
+        <p class="desc">Convert any text to UPPERCASE, lowercase, Title Case, Sentence case, or camelCase in one click.</p>
+        <label for="case-input">Your text</label>
+        <textarea id="case-input" rows="6" placeholder="Type or paste text to convert..."></textarea>
+        <div class="chip-group">
+          <button class="chip" onclick="convertCase('upper')">UPPERCASE</button>
+          <button class="chip" onclick="convertCase('lower')">lowercase</button>
+          <button class="chip" onclick="convertCase('title')">Title Case</button>
+          <button class="chip" onclick="convertCase('sentence')">Sentence case</button>
+          <button class="chip" onclick="convertCase('camel')">camelCase</button>
+          <button class="chip" onclick="convertCase('alt')">aLtErNaTiNg</button>
+        </div>
+        <label style="margin-top:14px;">Result</label>
+        <div class="output-box" id="case-output">Your converted text will appear here.</div>
+        <div class="btn-row">
+          <button class="btn" onclick="copyText('case-output')">Copy result</button>
+        </div>
+      </section>
+
+      <!-- ============ TOOL 3: JSON FORMATTER & VALIDATOR ============ -->
+      <section class="tool-view panel" id="tool-json" aria-labelledby="h-json">
+        <h2 id="h-json">JSON Formatter &amp; Validator</h2>
+        <p class="desc">Paste raw or minified JSON to instantly format, beautify, and validate it. Errors are pointed out clearly so you can fix them fast.</p>
+        <label for="json-input">Raw JSON</label>
+        <textarea id="json-input" rows="8" placeholder='{"name":"ToolForge","free":true}'></textarea>
+        <div class="btn-row">
+          <button class="btn" onclick="formatJSON()">Format &amp; Validate</button>
+          <button class="btn secondary" onclick="minifyJSON()">Minify</button>
+          <button class="btn secondary" onclick="document.getElementById('json-input').value='';document.getElementById('json-status').innerHTML='';document.getElementById('json-output').textContent='Formatted JSON will appear here.'">Clear</button>
+        </div>
+        <p id="json-status" style="margin-top:10px;font-size:13.5px;"></p>
+        <div class="output-box" id="json-output">Formatted JSON will appear here.</div>
+        <div class="btn-row">
+          <button class="btn" onclick="copyText('json-output')">Copy result</button>
+        </div>
+      </section>
+
+      <div class="ad-slot ad-in-content" aria-label="Advertisement">
+        <span>AD SLOT — In-content responsive unit (paste AdSense unit here)</span>
+      </div>
+
+      <!-- ============ TOOL 4: PASSWORD GENERATOR ============ -->
+      <section class="tool-view panel" id="tool-password" aria-labelledby="h-password">
+        <h2 id="h-password">Secure Password Generator</h2>
+        <p class="desc">Generate strong, random passwords with custom length and character sets. Everything runs locally — nothing is sent anywhere.</p>
+        <div class="output-box mono" id="pw-output" style="font-size:20px;text-align:center;letter-spacing:1px;">Click generate</div>
+        <div class="btn-row">
+          <button class="btn" onclick="generatePassword()">Generate password</button>
+          <button class="btn secondary" onclick="copyText('pw-output')">Copy</button>
+        </div>
+        <div style="margin-top:18px;">
+          <label for="pw-length">Length: <span id="pw-length-val">16</span></label>
+          <input type="range" id="pw-length" min="6" max="48" value="16" oninput="document.getElementById('pw-length-val').textContent=this.value">
+        </div>
+        <div style="margin-top:8px;">
+          <div class="toggle-row"><span>Uppercase letters (A–Z)</span><input type="checkbox" id="pw-upper" checked></div>
+          <div class="toggle-row"><span>Lowercase letters (a–z)</span><input type="checkbox" id="pw-lower" checked></div>
+          <div class="toggle-row"><span>Numbers (0–9)</span><input type="checkbox" id="pw-numbers" checked></div>
+          <div class="toggle-row"><span>Symbols (!@#$%^&amp;*)</span><input type="checkbox" id="pw-symbols" checked></div>
+        </div>
+      </section>
+
+      <!-- ============ TOOL 5: QR CODE GENERATOR ============ -->
+      <section class="tool-view panel" id="tool-qr" aria-labelledby="h-qr">
+        <h2 id="h-qr">QR Code Generator</h2>
+        <p class="desc">Turn any link or text into a downloadable QR code instantly — perfect for menus, business cards, and packaging.</p>
+        <label for="qr-input">Text or URL</label>
+        <input type="text" id="qr-input" class="text-input" placeholder="https://example.com" value="https://your-domain.vercel.app">
+        <div class="btn-row">
+          <button class="btn" onclick="generateQR()">Generate QR code</button>
+          <button class="btn secondary" onclick="downloadQR()">Download PNG</button>
+        </div>
+        <div id="qr-canvas-wrap"><div id="qr-canvas"></div></div>
+      </section>
+
+      <!-- ============ SEO CONTENT BLOCK ============ -->
+      <section class="panel seo-block">
+        <h2>Free Online Tools, Built for Speed</h2>
+        <p>ToolForge brings together the utilities people search for every single day — a word counter for writers and students, a case converter for quick formatting fixes, a JSON formatter for developers, a password generator for staying secure, and a QR code generator for sharing links offline. Every tool runs entirely in your browser: no uploads, no accounts, no waiting.</p>
+        <h3>Frequently asked questions</h3>
+        <div class="faq-item">
+          <h3>Is ToolForge really free to use?</h3>
+          <p>Yes. Every tool on this page is completely free, with no sign-up, no limits, and no watermark on your results.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Does my text or data get uploaded anywhere?</h3>
+          <p>No. All processing — counting words, formatting JSON, generating passwords and QR codes — happens locally in your browser. Nothing is sent to a server.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I use ToolForge on my phone?</h3>
+          <p>Yes, the whole toolbox is fully responsive and works smoothly on mobile, tablet, and desktop browsers.</p>
+        </div>
+      </section>
+
     </div>
-  </section>
 
-  <!-- In-feed ad between tool 1 and 2 -->
-  <div class="ad-slot ad-infeed" id="ad-infeed-1"><!-- AdSense in-feed / native unit goes here --> Ad space · in-feed native unit</div>
-
-  <!-- ================= TOOL 2: Password Generator ================= -->
-  <section class="tool-section" id="tool-password">
-    <div class="tool-card" data-id="T-02">
-      <h2>Secure Password Generator</h2>
-      <p class="desc">Generate a random password with a custom length and character set. Nothing is sent to a server — it's created locally in your browser.</p>
-
-      <label class="field-label" for="pwLength">Password length</label>
-      <div class="range-wrap">
-        <input type="range" id="pwLength" min="4" max="64" value="16">
-        <span class="len-val" id="pwLengthVal">16</span>
+    <!-- Sidebar -->
+    <aside>
+      <div class="ad-slot ad-sidebar" aria-label="Advertisement" style="position:sticky;top:180px;">
+        <span>AD SLOT — 300x250 Sidebar (paste AdSense unit here)</span>
       </div>
+    </aside>
+  </div>
 
-      <div class="opt-row">
-        <label><input type="checkbox" id="optUpper" checked> Uppercase (A-Z)</label>
-        <label><input type="checkbox" id="optLower" checked> Lowercase (a-z)</label>
-        <label><input type="checkbox" id="optNumbers" checked> Numbers (0-9)</label>
-        <label><input type="checkbox" id="optSymbols" checked> Symbols (!@#$)</label>
-      </div>
-
-      <div class="pass-output">
-        <input type="text" id="passwordResult" readonly placeholder="Your password will appear here">
-        <button class="btn ghost" id="copyPwBtn" type="button">Copy</button>
-      </div>
-      <span class="copy-note" id="pwCopyNote">Copied ✓</span>
-
-      <div class="btn-row">
-        <button class="btn brass" id="generatePwBtn" type="button">Generate password</button>
-      </div>
-      <div class="error-line" id="pwError">Select at least one character type.</div>
-    </div>
-  </section>
-
-  <!-- ================= TOOL 3: Text Case Converter ================= -->
-  <section class="tool-section" id="tool-case">
-    <div class="tool-card" data-id="T-03">
-      <h2>Text Case Converter</h2>
-      <p class="desc">Convert any text to UPPERCASE, lowercase, Title Case, or Sentence case with one click.</p>
-
-      <label class="field-label" for="caseInput">Your text</label>
-      <textarea id="caseInput" rows="6" placeholder="Type or paste text to convert..."></textarea>
-
-      <div class="case-grid">
-        <button class="btn ghost" data-case="upper" type="button">UPPERCASE</button>
-        <button class="btn ghost" data-case="lower" type="button">lowercase</button>
-        <button class="btn ghost" data-case="title" type="button">Title Case</button>
-        <button class="btn ghost" data-case="sentence" type="button">Sentence case</button>
-      </div>
-
-      <label class="field-label" for="caseOutput">Result</label>
-      <textarea id="caseOutput" rows="6" readonly placeholder="Converted text appears here"></textarea>
-      <div class="btn-row">
-        <button class="btn ghost" id="copyCaseBtn" type="button">Copy result</button>
-        <span class="copy-note" id="caseCopyNote">Copied ✓</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- In-feed ad between tool 3 and 4 -->
-  <div class="ad-slot ad-infeed" id="ad-infeed-2"><!-- AdSense in-feed / native unit goes here --> Ad space · in-feed native unit</div>
-
-  <!-- ================= TOOL 4: JSON Beautifier ================= -->
-  <section class="tool-section" id="tool-json">
-    <div class="tool-card" data-id="T-04">
-      <h2>JSON Beautifier / Formatter</h2>
-      <p class="desc">Paste raw or minified JSON to validate it and format it with proper indentation.</p>
-
-      <label class="field-label" for="jsonInput">Raw JSON</label>
-      <textarea id="jsonInput" rows="8" placeholder='{"example":"paste your JSON here"}'></textarea>
-
-      <div class="btn-row">
-        <button class="btn brass" id="formatJsonBtn" type="button">Beautify</button>
-        <button class="btn ghost" id="minifyJsonBtn" type="button">Minify</button>
-        <button class="btn ghost" id="copyJsonBtn" type="button">Copy output</button>
-        <span class="copy-note" id="jsonCopyNote">Copied ✓</span>
-      </div>
-      <div class="error-line" id="jsonError">Invalid JSON — check for missing commas, quotes, or brackets.</div>
-
-      <label class="field-label" for="jsonOutput">Formatted output</label>
-      <textarea id="jsonOutput" rows="8" readonly placeholder="Formatted JSON appears here"></textarea>
-    </div>
-  </section>
-
-  <!-- ================= TOOL 5: Base64 Encode/Decode ================= -->
-  <section class="tool-section" id="tool-base64">
-    <div class="tool-card" data-id="T-05">
-      <h2>Base64 Encode &amp; Decode</h2>
-      <p class="desc">Convert plain text to Base64, or decode a Base64 string back to readable text.</p>
-
-      <label class="field-label" for="b64Input">Input</label>
-      <textarea id="b64Input" rows="6" placeholder="Enter text or Base64 string..."></textarea>
-
-      <div class="btn-row">
-        <button class="btn brass" id="encodeB64Btn" type="button">Encode →</button>
-        <button class="btn ghost" id="decodeB64Btn" type="button">← Decode</button>
-        <button class="btn ghost" id="copyB64Btn" type="button">Copy output</button>
-        <span class="copy-note" id="b64CopyNote">Copied ✓</span>
-      </div>
-      <div class="error-line" id="b64Error">Couldn't decode — that doesn't look like valid Base64.</div>
-
-      <label class="field-label" for="b64Output">Output</label>
-      <textarea id="b64Output" rows="6" readonly placeholder="Result appears here"></textarea>
-    </div>
-  </section>
-
-  <!-- Sidebar/footer rectangle ad slot -->
-  <div class="ad-slot ad-footer" id="ad-footer"><!-- AdSense rectangle/banner unit goes here --> Ad space · 336×280 rectangle</div>
-
+  <div class="ad-slot ad-footer" aria-label="Advertisement">
+    <span>AD SLOT — 728x90 Footer (paste AdSense unit here)</span>
+  </div>
 </main>
 
-<footer class="site">
-  © <span id="year"></span> Free Online Tools Hub — All tools run locally in your browser. No data is uploaded.
+<footer>
+  <p>© <span id="year"></span> ToolForge — All tools run locally in your browser. No data is stored or uploaded.</p>
 </footer>
 
 <script>
-  // ---------- Tab switching ----------
-  const tabBtns = document.querySelectorAll('.tab-btn');
-  const sections = document.querySelectorAll('.tool-section');
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      tabBtns.forEach(b => { b.classList.remove('active'); b.removeAttribute('aria-current'); });
-      sections.forEach(s => s.classList.remove('active'));
-      btn.classList.add('active');
-      btn.setAttribute('aria-current', 'true');
-      document.getElementById(btn.dataset.target).classList.add('active');
-    });
-  });
-
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // ---------- Tool 1: Word & Character Counter ----------
-  const textInput = document.getElementById('textInput');
-  const wcWords = document.getElementById('wcWords');
-  const wcChars = document.getElementById('wcChars');
-  const wcCharsNoSpace = document.getElementById('wcCharsNoSpace');
-  const wcSentences = document.getElementById('wcSentences');
-  const wcReadTime = document.getElementById('wcReadTime');
+  /* ===== Tab switching ===== */
+  function showTool(id){
+    document.querySelectorAll('.tool-view').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('tool-' + id).classList.add('active');
+    document.querySelector('.tab-btn[data-tool="' + id + '"]').classList.add('active');
+  }
 
-  textInput.addEventListener('input', () => {
-    const raw = textInput.value;
-    const trimmed = raw.trim();
-    const words = trimmed === '' ? 0 : trimmed.split(/\s+/).length;
-    const chars = raw.length;
-    const charsNoSpace = raw.replace(/\s/g, '').length;
-    const sentences = trimmed === '' ? 0 : (trimmed.match(/[.!?]+(\s|$)/g) || []).length || (trimmed ? 1 : 0);
-    const minutes = words / 200; // average reading speed
-    let readTimeLabel;
-    if (words === 0) readTimeLabel = '0 min';
-    else if (minutes < 1) readTimeLabel = '< 1 min';
-    else readTimeLabel = Math.round(minutes) + ' min';
+  /* ===== Tool 1: Word & Character Counter ===== */
+  function updateCounter(){
+    const text = document.getElementById('counter-input').value;
+    const trimmed = text.trim();
+    const words = trimmed.length ? trimmed.split(/\s+/).length : 0;
+    const chars = text.length;
+    const sentences = trimmed.length ? (trimmed.match(/[.!?]+(\s|$)/g) || []).length || (trimmed ? 1 : 0) : 0;
+    const minutes = words / 200;
+    const readTime = minutes < 1 ? Math.max(1, Math.round(minutes * 60)) + 's' : Math.round(minutes) + ' min';
 
-    wcWords.textContent = words;
-    wcChars.textContent = chars;
-    wcCharsNoSpace.textContent = charsNoSpace;
-    wcSentences.textContent = sentences;
-    wcReadTime.textContent = readTimeLabel;
-  });
+    document.getElementById('c-words').textContent = words;
+    document.getElementById('c-chars').textContent = chars;
+    document.getElementById('c-sentences').textContent = sentences;
+    document.getElementById('c-time').textContent = words === 0 ? '0s' : readTime;
+  }
 
-  // ---------- Tool 2: Password Generator ----------
-  const pwLength = document.getElementById('pwLength');
-  const pwLengthVal = document.getElementById('pwLengthVal');
-  const passwordResult = document.getElementById('passwordResult');
-  const optUpper = document.getElementById('optUpper');
-  const optLower = document.getElementById('optLower');
-  const optNumbers = document.getElementById('optNumbers');
-  const optSymbols = document.getElementById('optSymbols');
-  const pwError = document.getElementById('pwError');
+  /* ===== Tool 2: Case Converter ===== */
+  function convertCase(type){
+    const input = document.getElementById('case-input').value;
+    let result = '';
+    switch(type){
+      case 'upper': result = input.toUpperCase(); break;
+      case 'lower': result = input.toLowerCase(); break;
+      case 'title': result = input.replace(/\w\S*/g, t => t.charAt(0).toUpperCase() + t.substr(1).toLowerCase()); break;
+      case 'sentence': result = input.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, c => c.toUpperCase()); break;
+      case 'camel': result = input.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m,c) => c.toUpperCase()); break;
+      case 'alt': result = input.split('').map((c,i) => i % 2 === 0 ? c.toLowerCase() : c.toUpperCase()).join(''); break;
+    }
+    document.getElementById('case-output').textContent = result || 'Your converted text will appear here.';
+  }
 
-  pwLength.addEventListener('input', () => { pwLengthVal.textContent = pwLength.value; });
+  /* ===== Tool 3: JSON Formatter & Validator ===== */
+  function formatJSON(){
+    const raw = document.getElementById('json-input').value;
+    const statusEl = document.getElementById('json-status');
+    const outEl = document.getElementById('json-output');
+    try{
+      const parsed = JSON.parse(raw);
+      outEl.textContent = JSON.stringify(parsed, null, 2);
+      statusEl.innerHTML = '<span class="status-ok">✓ Valid JSON</span>';
+    }catch(err){
+      statusEl.innerHTML = '<span class="status-bad">✗ Invalid JSON — ' + err.message + '</span>';
+      outEl.textContent = 'Fix the error above and try again.';
+    }
+  }
+  function minifyJSON(){
+    const raw = document.getElementById('json-input').value;
+    const statusEl = document.getElementById('json-status');
+    const outEl = document.getElementById('json-output');
+    try{
+      const parsed = JSON.parse(raw);
+      outEl.textContent = JSON.stringify(parsed);
+      statusEl.innerHTML = '<span class="status-ok">✓ Valid JSON — minified</span>';
+    }catch(err){
+      statusEl.innerHTML = '<span class="status-bad">✗ Invalid JSON — ' + err.message + '</span>';
+      outEl.textContent = 'Fix the error above and try again.';
+    }
+  }
 
-  function generatePassword() {
+  /* ===== Tool 4: Password Generator ===== */
+  function generatePassword(){
+    const length = parseInt(document.getElementById('pw-length').value, 10);
+    const useUpper = document.getElementById('pw-upper').checked;
+    const useLower = document.getElementById('pw-lower').checked;
+    const useNumbers = document.getElementById('pw-numbers').checked;
+    const useSymbols = document.getElementById('pw-symbols').checked;
+
     const sets = {
       upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
       lower: 'abcdefghijklmnopqrstuvwxyz',
       numbers: '0123456789',
-      symbols: '!@#$%^&*()_-+=?<>[]{}'
+      symbols: '!@#$%^&*()_+-=[]{}?'
     };
     let pool = '';
-    if (optUpper.checked) pool += sets.upper;
-    if (optLower.checked) pool += sets.lower;
-    if (optNumbers.checked) pool += sets.numbers;
-    if (optSymbols.checked) pool += sets.symbols;
+    if(useUpper) pool += sets.upper;
+    if(useLower) pool += sets.lower;
+    if(useNumbers) pool += sets.numbers;
+    if(useSymbols) pool += sets.symbols;
 
-    if (!pool) {
-      pwError.classList.add('show');
-      passwordResult.value = '';
+    if(!pool){
+      document.getElementById('pw-output').textContent = 'Select at least one character type';
       return;
     }
-    pwError.classList.remove('show');
-
-    const length = parseInt(pwLength.value, 10);
-    const arr = new Uint32Array(length);
-    if (window.crypto && window.crypto.getRandomValues) {
-      window.crypto.getRandomValues(arr);
-    } else {
-      for (let i = 0; i < length; i++) arr[i] = Math.floor(Math.random() * 4294967295);
+    const array = new Uint32Array(length);
+    crypto.getRandomValues(array);
+    let result = '';
+    for(let i = 0; i < length; i++){
+      result += pool[array[i] % pool.length];
     }
-    let password = '';
-    for (let i = 0; i < length; i++) {
-      password += pool.charAt(arr[i] % pool.length);
-    }
-    passwordResult.value = password;
+    document.getElementById('pw-output').textContent = result;
   }
 
-  document.getElementById('generatePwBtn').addEventListener('click', generatePassword);
-  generatePassword();
-
-  document.getElementById('copyPwBtn').addEventListener('click', () => {
-    if (!passwordResult.value) return;
-    copyToClipboard(passwordResult.value, 'pwCopyNote');
-  });
-
-  // ---------- Tool 3: Text Case Converter ----------
-  const caseInput = document.getElementById('caseInput');
-  const caseOutput = document.getElementById('caseOutput');
-
-  function toTitleCase(str) {
-    return str.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+  /* ===== Tool 5: QR Code Generator ===== */
+  let qrInstance = null;
+  function generateQR(){
+    const value = document.getElementById('qr-input').value.trim() || 'https://your-domain.vercel.app';
+    const wrap = document.getElementById('qr-canvas');
+    wrap.innerHTML = '';
+    qrInstance = new QRCode(wrap, {
+      text: value,
+      width: 220,
+      height: 220,
+      colorDark: '#16181C',
+      colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.H
+    });
   }
-  function toSentenceCase(str) {
-    const lower = str.toLowerCase();
-    return lower.replace(/(^\s*\w|[.!?]\s+\w)/g, c => c.toUpperCase());
+  function downloadQR(){
+    const img = document.querySelector('#qr-canvas img') || document.querySelector('#qr-canvas canvas');
+    if(!img){ generateQR(); return; }
+    const link = document.createElement('a');
+    link.download = 'qr-code.png';
+    link.href = img.src || img.toDataURL('image/png');
+    link.click();
   }
+  generateQR();
 
-  document.querySelectorAll('[data-case]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const val = caseInput.value;
-      switch (btn.dataset.case) {
-        case 'upper': caseOutput.value = val.toUpperCase(); break;
-        case 'lower': caseOutput.value = val.toLowerCase(); break;
-        case 'title': caseOutput.value = toTitleCase(val); break;
-        case 'sentence': caseOutput.value = toSentenceCase(val); break;
+  /* ===== Shared: copy-to-clipboard ===== */
+  function copyText(elId){
+    const el = document.getElementById(elId);
+    const text = el.value !== undefined ? el.value : el.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const original = el.textContent;
+      if(el.tagName !== 'TEXTAREA'){
+        el.textContent = 'Copied to clipboard ✓';
+        setTimeout(() => { el.textContent = original; }, 1000);
       }
     });
-  });
-
-  document.getElementById('copyCaseBtn').addEventListener('click', () => {
-    if (!caseOutput.value) return;
-    copyToClipboard(caseOutput.value, 'caseCopyNote');
-  });
-
-  // ---------- Tool 4: JSON Beautifier ----------
-  const jsonInput = document.getElementById('jsonInput');
-  const jsonOutput = document.getElementById('jsonOutput');
-  const jsonError = document.getElementById('jsonError');
-
-  function formatJson(minify) {
-    jsonError.classList.remove('show');
-    try {
-      const parsed = JSON.parse(jsonInput.value);
-      jsonOutput.value = minify ? JSON.stringify(parsed) : JSON.stringify(parsed, null, 2);
-    } catch (e) {
-      jsonError.classList.add('show');
-      jsonOutput.value = '';
-    }
-  }
-
-  document.getElementById('formatJsonBtn').addEventListener('click', () => formatJson(false));
-  document.getElementById('minifyJsonBtn').addEventListener('click', () => formatJson(true));
-  document.getElementById('copyJsonBtn').addEventListener('click', () => {
-    if (!jsonOutput.value) return;
-    copyToClipboard(jsonOutput.value, 'jsonCopyNote');
-  });
-
-  // ---------- Tool 5: Base64 Encode/Decode ----------
-  const b64Input = document.getElementById('b64Input');
-  const b64Output = document.getElementById('b64Output');
-  const b64Error = document.getElementById('b64Error');
-
-  document.getElementById('encodeB64Btn').addEventListener('click', () => {
-    b64Error.classList.remove('show');
-    try {
-      b64Output.value = btoa(unescape(encodeURIComponent(b64Input.value)));
-    } catch (e) {
-      b64Error.textContent = "Couldn't encode this input.";
-      b64Error.classList.add('show');
-    }
-  });
-
-  document.getElementById('decodeB64Btn').addEventListener('click', () => {
-    b64Error.classList.remove('show');
-    try {
-      b64Output.value = decodeURIComponent(escape(atob(b64Input.value.trim())));
-    } catch (e) {
-      b64Error.textContent = "Couldn't decode — that doesn't look like valid Base64.";
-      b64Error.classList.add('show');
-    }
-  });
-
-  document.getElementById('copyB64Btn').addEventListener('click', () => {
-    if (!b64Output.value) return;
-    copyToClipboard(b64Output.value, 'b64CopyNote');
-  });
-
-  // ---------- Shared: copy to clipboard ----------
-  function copyToClipboard(text, noteId) {
-    const note = document.getElementById(noteId);
-    const done = () => {
-      note.classList.add('show');
-      setTimeout(() => note.classList.remove('show'), 1400);
-    };
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(done).catch(done);
-    } else {
-      const ta = document.createElement('textarea');
-      ta.value = text;
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand('copy');
-      document.body.removeChild(ta);
-      done();
-    }
   }
 </script>
 
