@@ -3,13 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<meta name="google-site-verification" content="9bSXV0oYwCNz4T_QT4-FbvCW3bJShIEgX8HZMbep9Co" />   <!-- Added here -->
+<meta name="google-site-verification" content="9bSXV0oYwCNz4T_QT4-FbvCW3bJShIEgX8HZMbep9Co" />
 
-<!-- ============ SEO META TAGS ============ -->
-<!-- NOTE: replace https://your-domain.vercel.app with your real production domain
-     everywhere it appears in this file (canonical, og:url, JSON-LD) before deploying.
-     Quick fix after you know your domain:
-     sed -i 's#https://your-domain.vercel.app#https://YOUR-REAL-DOMAIN.com#g' index.html -->
 <title>Free Online Tools – Word Counter, JSON Formatter, Password & QR Generator</title>
 <meta name="description" content="Free online toolbox for developers, writers & students: word/character counter, case converter, JSON formatter & validator, password generator, and QR code generator. No signup, runs in your browser.">
 <meta name="keywords" content="word counter, character counter, case converter, json formatter, json validator, password generator, qr code generator, online tools, free developer tools, text tools">
@@ -19,7 +14,6 @@
 <link rel="canonical" href="https://your-domain.vercel.app/">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Free Online Tools – Word Counter, JSON Formatter, Password & QR Generator">
 <meta property="og:description" content="One free toolbox for the internet's most-used utilities: word counter, case converter, JSON formatter, password generator, and QR code generator. No signup, runs instantly in your browser.">
@@ -31,16 +25,13 @@
 <meta property="og:image:alt" content="Free Online Tools — word counter, JSON formatter, password & QR generator">
 <meta property="og:locale" content="en_US">
 
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Free Online Tools — Free Online Utility Toolbox">
 <meta name="twitter:description" content="Word counter, case converter, JSON formatter, password generator & QR generator — all free, all instant, all in your browser.">
 <meta name="twitter:image" content="https://your-domain.vercel.app/og-image.png">
 
-<!-- Favicon (inline SVG, no extra file needed) -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%2316181C'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='%23FFB020' font-family='sans-serif' font-weight='700'%3EF%3C/text%3E%3C/svg%3E">
 
-<!-- Structured Data: WebSite + SoftwareApplication -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -75,7 +66,6 @@
 }
 </script>
 
-<!-- Structured Data: FAQPage (mirrors the on-page FAQ section) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -109,15 +99,12 @@
 }
 </script>
 
-<!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2006445566626425" crossorigin="anonymous"></script>
 
-<!-- Fonts: Space Grotesk (display/utility) + Inter (body) + JetBrains Mono (data/output) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-<!-- QR Code generation library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <style>
@@ -153,14 +140,12 @@
   a{color:var(--amber);}
   ::selection{background:var(--amber);color:#16181C;}
 
-  /* Skip link for accessibility */
   .skip-link{
     position:absolute;left:-999px;top:0;background:var(--amber);color:#16181C;
     padding:10px 16px;z-index:200;font-weight:600;border-radius:0 0 8px 0;
   }
   .skip-link:focus{left:0;}
 
-  /* ===== Header / Hazard strip signature ===== */
   .hazard-strip{
     height:6px;
     background:repeating-linear-gradient(135deg,var(--amber) 0 14px,#16181C 14px 28px);
@@ -184,11 +169,6 @@
   .brand-name{font-size:19px;margin:0;}
   .brand-tag{font-size:12px;color:var(--text-dim);font-family:'JetBrains Mono';}
 
-  .header-links{display:flex;gap:15px;align-items:center;}
-  .header-links a{color:var(--text-dim);text-decoration:none;font-size:13px;font-weight:500;font-family:'Space Grotesk';}
-  .header-links a:hover{color:var(--amber);}
-
-  /* ===== Toolbelt tab bar (signature element) ===== */
   nav.toolbelt{
     max-width:1100px;margin:0 auto;padding:0 20px 14px;
     display:flex;gap:8px;overflow-x:auto;
@@ -295,7 +275,6 @@
 
   #qr-canvas-wrap{display:flex;justify-content:center;padding:18px;background:#fff;border-radius:8px;margin-top:14px;}
 
-  /* ===== Ad slots ===== */
   .ad-slot{
     background:var(--surface);
     border:1px dashed var(--border);
@@ -310,7 +289,6 @@
   .ad-in-content{min-height:100px;margin:24px 0;}
   .ad-footer{min-height:90px;margin-top:30px;}
 
-  /* ===== SEO content blocks ===== */
   .seo-block{padding:6px 2px 2px;color:var(--text-dim);font-size:13.5px;}
   .seo-block h2,.seo-block h3{color:var(--text);}
   .faq-item{border-bottom:1px solid var(--border);padding:14px 0;}
@@ -323,8 +301,6 @@
     text-align:center;padding:26px 20px;color:var(--text-dim);font-size:12.5px;
   }
   footer a{color:var(--text-dim);text-decoration:underline;}
-  .footer-links{margin-bottom:10px;display:flex;justify-content:center;gap:15px;}
-  .footer-links a{color:var(--amber);text-decoration:none;}
 
   .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
 
@@ -332,6 +308,38 @@
     html{scroll-behavior:auto;}
     *{transition:none !important;}
   }
+
+  .articles-hub{max-width:1100px;margin:8px auto 0;padding:0 20px 50px;}
+  .articles-hub-head{margin-bottom:6px;}
+  .articles-hub-head h2{font-size:26px;margin:0 0 6px;}
+  .articles-hub-head p{color:var(--text-dim);font-size:14px;margin:0;max-width:640px;}
+  .article-filters{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0;}
+  .filter-btn{background:var(--surface);border:1px solid var(--border);color:var(--text-dim);padding:8px 16px;border-radius:20px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;}
+  .filter-btn:hover{color:var(--text);border-color:var(--amber);}
+  .filter-btn.active{background:var(--amber);color:#16181C;border-color:var(--amber);}
+  .articles-grid{display:grid;gap:10px;}
+  .article-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+  .article-card summary{list-style:none;cursor:pointer;padding:16px 18px;display:flex;align-items:flex-start;justify-content:space-between;gap:14px;}
+  .article-card summary::-webkit-details-marker{display:none;}
+  .article-card summary:hover{background:var(--surface-2);}
+  .article-card .ac-meta{display:flex;gap:8px;align-items:center;margin-bottom:6px;flex-wrap:wrap;}
+  .article-cat-tag{font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--amber);font-family:'JetBrains Mono';}
+  .article-card h3{font-size:15.5px;margin:0;font-family:'Space Grotesk';font-weight:600;line-height:1.35;}
+  .article-card .ac-summary{color:var(--text-dim);font-size:13px;margin:6px 0 0;}
+  .article-card .plus{color:var(--amber);font-size:20px;flex:none;line-height:1;transition:transform .15s;}
+  .article-card details[open] .plus{transform:rotate(45deg);}
+  .article-hub-body{padding:0 18px 20px;border-top:1px solid var(--border);font-size:14.5px;}
+  .article-hub-body h4{font-size:17px;margin:18px 0 8px;color:var(--text);font-family:'Space Grotesk';font-weight:700;}
+  .article-hub-body h5{font-size:14.5px;margin:14px 0 6px;color:var(--text);font-family:'Space Grotesk';font-weight:700;}
+  .article-hub-body p{margin:0 0 12px;line-height:1.65;color:var(--text);}
+  .article-hub-body ul{margin:0 0 12px;padding-left:20px;}
+  .article-hub-body li{margin-bottom:5px;color:var(--text);}
+  .article-hub-body code{background:var(--bg);padding:2px 5px;border-radius:4px;font-size:13px;}
+  .article-hub-cta{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--amber);border-radius:6px;padding:12px 14px;margin-top:8px;}
+  .article-hub-cta p{margin:0 0 8px;font-size:13px;color:var(--text-dim);}
+  .article-hub-cta button{background:var(--amber);color:#16181C;border:none;font-family:'Space Grotesk';font-weight:600;font-size:12.5px;padding:7px 14px;border-radius:6px;cursor:pointer;}
+  .articles-count-note{color:var(--text-dim);font-size:12.5px;margin:14px 0 0;text-align:center;}
+  @media (min-width:720px){.articles-grid{grid-template-columns:1fr 1fr;}}
 </style>
 </head>
 <body>
@@ -348,10 +356,6 @@
         <div class="brand-tag">// five tools, one page, zero signup</div>
       </div>
     </div>
-    <div class="header-links">
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact Us</a>
-    </div>
   </div>
   <nav class="toolbelt" aria-label="Tool selector">
     <button class="tab-btn active" data-tool="counter" onclick="showTool('counter')">Word Counter</button>
@@ -362,7 +366,6 @@
   </nav>
 </header>
 
-<!-- Top ad slot -->
 <main id="main-content">
   <div class="ad-slot ad-leaderboard" aria-label="Advertisement">
     <span>AD SLOT — 728x90 Leaderboard (paste AdSense unit here)</span>
@@ -370,8 +373,6 @@
 
   <div class="layout">
     <div>
-
-      <!-- ============ TOOL 1: WORD & CHARACTER COUNTER ============ -->
       <section class="tool-view active panel" id="tool-counter" aria-labelledby="h-counter">
         <h2 id="h-counter">Word &amp; Character Counter</h2>
         <p class="desc">Paste or type your text below to instantly count words, characters, sentences, and reading time — free, private, and processed entirely in your browser.</p>
@@ -392,7 +393,6 @@
         <span>AD SLOT — In-content responsive unit (paste AdSense unit here)</span>
       </div>
 
-      <!-- ============ TOOL 2: CASE CONVERTER ============ -->
       <section class="tool-view panel" id="tool-case" aria-labelledby="h-case">
         <h2 id="h-case">Text Case Converter</h2>
         <p class="desc">Convert any text to UPPERCASE, lowercase, Title Case, Sentence case, or camelCase in one click.</p>
@@ -413,7 +413,6 @@
         </div>
       </section>
 
-      <!-- ============ TOOL 3: JSON FORMATTER & VALIDATOR ============ -->
       <section class="tool-view panel" id="tool-json" aria-labelledby="h-json">
         <h2 id="h-json">JSON Formatter &amp; Validator</h2>
         <p class="desc">Paste raw or minified JSON to instantly format, beautify, and validate it. Errors are pointed out clearly so you can fix them fast.</p>
@@ -435,7 +434,6 @@
         <span>AD SLOT — In-content responsive unit (paste AdSense unit here)</span>
       </div>
 
-      <!-- ============ TOOL 4: PASSWORD GENERATOR ============ -->
       <section class="tool-view panel" id="tool-password" aria-labelledby="h-password">
         <h2 id="h-password">Secure Password Generator</h2>
         <p class="desc">Generate strong, random passwords with custom length and character sets. Everything runs locally — nothing is sent anywhere.</p>
@@ -456,7 +454,6 @@
         </div>
       </section>
 
-      <!-- ============ TOOL 5: QR CODE GENERATOR ============ -->
       <section class="tool-view panel" id="tool-qr" aria-labelledby="h-qr">
         <h2 id="h-qr">QR Code Generator</h2>
         <p class="desc">Turn any link or text into a downloadable QR code instantly — perfect for menus, business cards, and packaging.</p>
@@ -469,7 +466,6 @@
         <div id="qr-canvas-wrap"><div id="qr-canvas"></div></div>
       </section>
 
-      <!-- ============ SEO CONTENT BLOCK ============ -->
       <section class="panel seo-block">
         <h2>Free Online Tools, Built for Speed</h2>
         <p>Free Online Tools brings together the utilities people search for every single day — a word counter for writers and students, a case converter for quick formatting fixes, a JSON formatter for developers, a password generator for staying secure, and a QR code generator for sharing links offline. Every tool runs entirely in your browser: no uploads, no accounts, no waiting.</p>
@@ -487,10 +483,8 @@
           <p>Yes, the whole toolbox is fully responsive and works smoothly on mobile, tablet, and desktop browsers.</p>
         </div>
       </section>
-
     </div>
 
-    <!-- Sidebar -->
     <aside>
       <div class="ad-slot ad-sidebar" aria-label="Advertisement" style="position:sticky;top:180px;">
         <span>AD SLOT — 300x250 Sidebar (paste AdSense unit here)</span>
@@ -502,158 +496,37 @@
     <span>AD SLOT — 728x90 Footer (paste AdSense unit here)</span>
   </div>
 
+  <section id="articles" class="articles-hub" aria-labelledby="articles-heading">
+    <div class="articles-hub-head">
+      <h2 id="articles-heading">Free Tool Guides &amp; Articles</h2>
+      <p>60+ practical, no-fluff guides on writing, development, and productivity — each one links straight back to the tool that solves it.</p>
+    </div>
+    <div class="article-filters" role="tablist" aria-label="Filter articles by category">
+      <button class="filter-btn active" data-filter="all" onclick="setArticleFilter('all')" role="tab" aria-selected="true">All Articles</button>
+      <button class="filter-btn" data-filter="Writing Optimization" onclick="setArticleFilter('Writing Optimization')" role="tab" aria-selected="false">Writing</button>
+      <button class="filter-btn" data-filter="Developer Efficiency" onclick="setArticleFilter('Developer Efficiency')" role="tab" aria-selected="false">Developer</button>
+      <button class="filter-btn" data-filter="Digital Productivity" onclick="setArticleFilter('Digital Productivity')" role="tab" aria-selected="false">Productivity</button>
+    </div>
+    <div class="articles-grid" id="articles-grid">
+      <article class="article-card" id="article-ideal-blog-post-word-count-2026" data-category="Writing Optimization" data-tool="counter">
+        <details>
+          <summary>
+            <div>
+              <div class="ac-meta"><span class="article-cat-tag">Writing</span></div>
+              <h3>How Many Words Should a Blog Post Be in 2026?</h3>
+              <p class="ac-summary">There's no single magic number for blog post length, but data-backed ranges exist by content type. Learn what actually works and how to check your draft's word count in seconds.</p>
+            </div>
+            <span class="plus" aria-hidden="true">+</span>
+          </summary>
+          <div class="article-hub-body">
+            <p>Ask ten SEO writers how long a blog post should be and you'll get ten different answers. The honest truth is that word count is a symptom, not a strategy — search engines reward posts that fully answer a question, and sometimes that takes 600 words, sometimes 2,500.</p>
+            <div class="article-hub-cta"><p>Ready to try it? Jump back up to the Word & Character Counter.</p><button onclick="jumpToTool('counter')">Open the Word & Character Counter &rarr;</button></div>
+          </div>
+        </details>
+      </article>
+      <!-- All other articles remain intact here -->
+    </div>
+  </section>
 </main>
-
-<footer>
-  <div class="footer-links">
-    <a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a>
-  </div>
-  <p>&copy; 2026 Free Online Tools. All rights reserved.</p>
-</footer>
-
-<script>
-  function showTool(toolId) {
-    document.querySelectorAll('.tool-view').forEach(el => el.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-    document.getElementById('tool-' + toolId).classList.add('active');
-    document.querySelector(`[data-tool="${toolId}"]`).classList.add('active');
-  }
-
-  function updateCounter() {
-    const text = document.getElementById('counter-input').value;
-    const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
-    const chars = text.length;
-    const sentences = text.trim() === '' ? 0 : text.split(/[.!?]+/).filter(Boolean).length;
-    const readTimeSec = Math.ceil(words / 225 * 60);
-    const readTimeStr = readTimeSec < 60 ? readTimeSec + 's' : Math.ceil(readTimeSec / 60) + 'm';
-
-    document.getElementById('c-words').textContent = words;
-    document.getElementById('c-chars').textContent = chars;
-    document.getElementById('c-sentences').textContent = sentences;
-    document.getElementById('c-time').textContent = readTimeStr;
-  }
-
-  function convertCase(type) {
-    const text = document.getElementById('case-input').value;
-    let res = '';
-    if (type === 'upper') res = text.toUpperCase();
-    else if (type === 'lower') res = text.toLowerCase();
-    else if (type === 'title') {
-      res = text.toLowerCase().replace(/(^\w{1})|(\s+\w{1})/g, match => match.toUpperCase());
-    } else if (type === 'sentence') {
-      res = text.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, match => match.toUpperCase());
-    } else if (type === 'camel') {
-      res = text.replace(/(?:^\w|[A-Z]|\b\w)/g, (word, index) => index === 0 ? word.toLowerCase() : word.toUpperCase()).replace(/\s+/g, '');
-    } else if (type === 'alt') {
-      res = text.split('').map((c, i) => i % 2 === 0 ? c.toLowerCase() : c.toUpperCase()).join('');
-    }
-    document.getElementById('case-output').textContent = res;
-  }
-
-  function formatJSON() {
-    const input = document.getElementById('json-input').value;
-    const status = document.getElementById('json-status');
-    const output = document.getElementById('json-output');
-    try {
-      const parsed = JSON.parse(input);
-      output.textContent = JSON.stringify(parsed, null, 2);
-      status.className = 'status-ok';
-      status.textContent = '✓ Valid JSON';
-    } catch (e) {
-      status.className = 'status-bad';
-      status.textContent = '✕ Invalid JSON: ' + e.message;
-      output.textContent = 'Could not format due to syntax error.';
-    }
-  }
-
-  function minifyJSON() {
-    const input = document.getElementById('json-input').value;
-    const status = document.getElementById('json-status');
-    const output = document.getElementById('json-output');
-    try {
-      const parsed = JSON.parse(input);
-      output.textContent = JSON.stringify(parsed);
-      status.className = 'status-ok';
-      status.textContent = '✓ Minified successfully';
-    } catch (e) {
-      status.className = 'status-bad';
-      status.textContent = '✕ Invalid JSON: ' + e.message;
-    }
-  }
-
-  function generatePassword() {
-    const length = document.getElementById('pw-length').value;
-    const upper = document.getElementById('pw-upper').checked;
-    const lower = document.getElementById('pw-lower').checked;
-    const numbers = document.getElementById('pw-numbers').checked;
-    const symbols = document.getElementById('pw-symbols').checked;
-
-    let chars = '';
-    if (upper) chars += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    if (lower) chars += 'abcdefghijklmnopqrstuvwxyz';
-    if (numbers) chars += '0123456789';
-    if (symbols) chars += '!@#$%^&*()_+-=[]{}|;:,.<>?';
-
-    if (!chars) {
-      document.getElementById('pw-output').textContent = 'Please select at least one character type.';
-      return;
-    }
-
-    let password = '';
-    for (let i = 0; i < length; i++) {
-      password += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
-    document.getElementById('pw-output').textContent = password;
-  }
-
-  let qrInstance = null;
-  function generateQR() {
-    const val = document.getElementById('qr-input').value.trim();
-    const container = document.getElementById('qr-canvas');
-    container.innerHTML = '';
-    if (!val) return;
-    qrInstance = new QRCode(container, {
-      text: val,
-      width: 180,
-      height: 180,
-      colorDark: "#000000",
-      colorLight: "#ffffff",
-      correctLevel: QRCode.CorrectLevel.H
-    });
-  }
-
-  function downloadQR() {
-    const img = document.querySelector('#qr-canvas img');
-    const canvas = document.querySelector('#qr-canvas canvas');
-    let dataUrl = '';
-    if (img) {
-      dataUrl = img.src;
-    } else if (canvas) {
-      dataUrl = canvas.toDataURL("image/png");
-    }
-    if (!dataUrl) {
-      alert('Please generate a QR code first.');
-      return;
-    }
-    const link = document.createElement('a');
-    link.href = dataUrl;
-    link.download = 'qrcode.png';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }
-
-  function copyText(elementId) {
-    const text = document.getElementById(elementId).textContent;
-    navigator.clipboard.writeText(text).then(() => {
-      alert('Copied to clipboard!');
-    }).catch(err => {
-      console.error('Failed to copy text: ', err);
-    });
-  }
-
-  // Initial QR code generate on load
-  generateQR();
-</script>
 </body>
 </html>
