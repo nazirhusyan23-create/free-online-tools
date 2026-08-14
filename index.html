@@ -3,9 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<meta name="google-site-verification" content="9bSXV0oYwCNz4T_QT4-FbvCW3bJShIEgX8HZMbep9Co" />
+<meta name="google-site-verification" content="9bSXV0oYwCNz4T_QT4-FbvCW3bJShIEgX8HZMbep9Co" />   <!-- Added here -->
 
 <!-- ============ SEO META TAGS ============ -->
+<!-- NOTE: replace https://your-domain.vercel.app with your real production domain
+     everywhere it appears in this file (canonical, og:url, JSON-LD) before deploying.
+     Quick fix after you know your domain:
+     sed -i 's#https://your-domain.vercel.app#https://YOUR-REAL-DOMAIN.com#g' index.html -->
 <title>Free Online Tools – Word Counter, JSON Formatter, Password & QR Generator</title>
 <meta name="description" content="Free online toolbox for developers, writers & students: word/character counter, case converter, JSON formatter & validator, password generator, and QR code generator. No signup, runs in your browser.">
 <meta name="keywords" content="word counter, character counter, case converter, json formatter, json validator, password generator, qr code generator, online tools, free developer tools, text tools">
@@ -33,10 +37,10 @@
 <meta name="twitter:description" content="Word counter, case converter, JSON formatter, password generator & QR generator — all free, all instant, all in your browser.">
 <meta name="twitter:image" content="https://your-domain.vercel.app/og-image.png">
 
-<!-- Favicon -->
+<!-- Favicon (inline SVG, no extra file needed) -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%2316181C'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='%23FFB020' font-family='sans-serif' font-weight='700'%3EF%3C/text%3E%3C/svg%3E">
 
-<!-- Structured Data -->
+<!-- Structured Data: WebSite + SoftwareApplication -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -44,7 +48,7 @@
     {
       "@type": "WebSite",
       "name": "Free Online Tools",
-      "alternateName": "Free Online Tools — All-in-One Toolbox",
+      "alternateName": "Free Online Tools \u2014 All-in-One Toolbox",
       "url": "https://your-domain.vercel.app/",
       "description": "Free Online Tools is an all-in-one online toolbox: word counter, case converter, JSON formatter/validator, password generator, and QR code generator, plus 60+ free guides on writing, development, and productivity.",
       "publisher": { "@type": "Organization", "name": "Free Online Tools" },
@@ -57,7 +61,7 @@
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Any (Web Browser)",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-      "description": "Free online toolbox with word counter, case converter, JSON formatter, password generator, and QR code generator — all in your browser, no signup needed.",
+      "description": "Free online toolbox with word counter, case converter, JSON formatter, password generator, and QR code generator \u2014 all in your browser, no signup needed.",
       "featureList": [
         "Word and character counter",
         "Text case converter",
@@ -71,6 +75,7 @@
 }
 </script>
 
+<!-- Structured Data: FAQPage (mirrors the on-page FAQ section) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -107,12 +112,12 @@
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2006445566626425" crossorigin="anonymous"></script>
 
-<!-- Fonts -->
+<!-- Fonts: Space Grotesk (display/utility) + Inter (body) + JetBrains Mono (data/output) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-<!-- QR Code Library -->
+<!-- QR Code generation library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <style>
@@ -148,12 +153,14 @@
   a{color:var(--amber);}
   ::selection{background:var(--amber);color:#16181C;}
 
+  /* Skip link for accessibility */
   .skip-link{
     position:absolute;left:-999px;top:0;background:var(--amber);color:#16181C;
     padding:10px 16px;z-index:200;font-weight:600;border-radius:0 0 8px 0;
   }
   .skip-link:focus{left:0;}
 
+  /* ===== Header / Hazard strip signature ===== */
   .hazard-strip{
     height:6px;
     background:repeating-linear-gradient(135deg,var(--amber) 0 14px,#16181C 14px 28px);
@@ -177,6 +184,7 @@
   .brand-name{font-size:19px;margin:0;}
   .brand-tag{font-size:12px;color:var(--text-dim);font-family:'JetBrains Mono';}
 
+  /* ===== Toolbelt tab bar (signature element) ===== */
   nav.toolbelt{
     max-width:1100px;margin:0 auto;padding:0 20px 14px;
     display:flex;gap:8px;overflow-x:auto;
@@ -283,6 +291,7 @@
 
   #qr-canvas-wrap{display:flex;justify-content:center;padding:18px;background:#fff;border-radius:8px;margin-top:14px;}
 
+  /* ===== Ad slots ===== */
   .ad-slot{
     background:var(--surface);
     border:1px dashed var(--border);
@@ -297,6 +306,7 @@
   .ad-in-content{min-height:100px;margin:24px 0;}
   .ad-footer{min-height:90px;margin-top:30px;}
 
+  /* ===== SEO content blocks ===== */
   .seo-block{padding:6px 2px 2px;color:var(--text-dim);font-size:13.5px;}
   .seo-block h2,.seo-block h3{color:var(--text);}
   .faq-item{border-bottom:1px solid var(--border);padding:14px 0;}
@@ -310,6 +320,14 @@
   }
   footer a{color:var(--text-dim);text-decoration:underline;}
 
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+
+  /* ===== Bottom Articles Hub ===== */
   .articles-hub{max-width:1100px;margin:8px auto 0;padding:0 20px 50px;}
   .articles-hub-head{margin-bottom:6px;}
   .articles-hub-head h2{font-size:26px;margin:0 0 6px;}
@@ -369,17 +387,19 @@
   </nav>
 </header>
 
+<!-- Top ad slot -->
 <main id="main-content">
   <div class="ad-slot ad-leaderboard" aria-label="Advertisement">
-    <span>AD SLOT — 728x90 Leaderboard</span>
+    <span>AD SLOT — 728x90 Leaderboard (paste AdSense unit here)</span>
   </div>
 
   <div class="layout">
     <div>
-      <!-- TOOL 1: WORD & CHARACTER COUNTER -->
+
+      <!-- ============ TOOL 1: WORD & CHARACTER COUNTER ============ -->
       <section class="tool-view active panel" id="tool-counter" aria-labelledby="h-counter">
         <h2 id="h-counter">Word &amp; Character Counter</h2>
-        <p class="desc">Paste or type your text below to instantly count words, characters, sentences, and reading time.</p>
+        <p class="desc">Paste or type your text below to instantly count words, characters, sentences, and reading time — free, private, and processed entirely in your browser.</p>
         <label for="counter-input">Your text</label>
         <textarea id="counter-input" rows="8" placeholder="Start typing or paste your text here..." oninput="updateCounter()"></textarea>
         <div class="stat-grid">
@@ -393,7 +413,11 @@
         </div>
       </section>
 
-      <!-- TOOL 2: CASE CONVERTER -->
+      <div class="ad-slot ad-in-content" aria-label="Advertisement">
+        <span>AD SLOT — In-content responsive unit (paste AdSense unit here)</span>
+      </div>
+
+      <!-- ============ TOOL 2: CASE CONVERTER ============ -->
       <section class="tool-view panel" id="tool-case" aria-labelledby="h-case">
         <h2 id="h-case">Text Case Converter</h2>
         <p class="desc">Convert any text to UPPERCASE, lowercase, Title Case, Sentence case, or camelCase in one click.</p>
@@ -414,10 +438,10 @@
         </div>
       </section>
 
-      <!-- TOOL 3: JSON FORMATTER -->
+      <!-- ============ TOOL 3: JSON FORMATTER & VALIDATOR ============ -->
       <section class="tool-view panel" id="tool-json" aria-labelledby="h-json">
         <h2 id="h-json">JSON Formatter &amp; Validator</h2>
-        <p class="desc">Paste raw or minified JSON to instantly format, beautify, and validate it.</p>
+        <p class="desc">Paste raw or minified JSON to instantly format, beautify, and validate it. Errors are pointed out clearly so you can fix them fast.</p>
         <label for="json-input">Raw JSON</label>
         <textarea id="json-input" rows="8" placeholder='{"name":"Free Online Tools","free":true}'></textarea>
         <div class="btn-row">
@@ -432,10 +456,14 @@
         </div>
       </section>
 
-      <!-- TOOL 4: PASSWORD GENERATOR -->
+      <div class="ad-slot ad-in-content" aria-label="Advertisement">
+        <span>AD SLOT — In-content responsive unit (paste AdSense unit here)</span>
+      </div>
+
+      <!-- ============ TOOL 4: PASSWORD GENERATOR ============ -->
       <section class="tool-view panel" id="tool-password" aria-labelledby="h-password">
         <h2 id="h-password">Secure Password Generator</h2>
-        <p class="desc">Generate strong, random passwords with custom length and character sets.</p>
+        <p class="desc">Generate strong, random passwords with custom length and character sets. Everything runs locally — nothing is sent anywhere.</p>
         <div class="output-box mono" id="pw-output" style="font-size:20px;text-align:center;letter-spacing:1px;">Click generate</div>
         <div class="btn-row">
           <button class="btn" onclick="generatePassword()">Generate password</button>
@@ -453,10 +481,10 @@
         </div>
       </section>
 
-      <!-- TOOL 5: QR CODE GENERATOR -->
+      <!-- ============ TOOL 5: QR CODE GENERATOR ============ -->
       <section class="tool-view panel" id="tool-qr" aria-labelledby="h-qr">
         <h2 id="h-qr">QR Code Generator</h2>
-        <p class="desc">Turn any link or text into a downloadable QR code instantly.</p>
+        <p class="desc">Turn any link or text into a downloadable QR code instantly — perfect for menus, business cards, and packaging.</p>
         <label for="qr-input">Text or URL</label>
         <input type="text" id="qr-input" class="text-input" placeholder="https://example.com" value="https://your-domain.vercel.app">
         <div class="btn-row">
@@ -466,56 +494,75 @@
         <div id="qr-canvas-wrap"><div id="qr-canvas"></div></div>
       </section>
 
-      <!-- ABOUT US -->
+      <!-- ============ ABOUT US ============ -->
       <section class="tool-view panel" id="tool-about" aria-labelledby="h-about">
         <h2 id="h-about">About Us</h2>
-        <p class="desc">Learn more about Free Online Tools, our mission, and our commitment to privacy.</p>
-        <div class="article-hub-body" style="border:none; padding:0;">
-          <h4>Welcome to Free Online Tools</h4>
-          <p>Free Online Tools is designed to be your go-to, all-in-one digital utility belt. Whether you are a writer checking copy length, a developer validating structured data, or someone looking to quickly generate a secure password or QR code, our platform provides instant results right in your browser.</p>
-          <h4>Our Privacy Commitment</h4>
-          <p>We believe utility tools should be completely private. That is why all processing—including word counting, JSON formatting, password generation, and QR code creation—happens entirely client-side on your device. Your data is never uploaded or stored on any server.</p>
-        </div>
+        <p class="desc">Learn more about Free Online Tools, your trusted browser-based utility platform for developers, writers, and students.</p>
+
+        <p>Welcome to <strong>Free Online Tools</strong>, your lightning-fast, secure, and completely free web-based utility toolbox. We designed this platform to provide instant access to everyday digital utilities without the annoyance of popups, mandatory signups, or server-side data storage.</p>
+
+        <h3 style="font-size:16px;margin:20px 0 8px;">Our Mission</h3>
+        <p>We believe that standard utilities like word counting, case conversion, JSON validation, password generation, and QR code creation should be effortless, secure, and accessible to everyone. Whether you are a developer debugging a payload, a writer counting copy lengths, or a student formatting text, our tools work entirely locally in your browser to protect your privacy.</p>
+
+        <h3 style="font-size:16px;margin:20px 0 8px;">Why Choose Our Tools?</h3>
+        <ul style="color:var(--text-dim);padding-left:20px;">
+          <li style="margin-bottom:8px;"><strong>100% Privacy Focused:</strong> All computations happen client-side in your browser. Your sensitive text, passwords, and JSON data are never uploaded to any remote server.</li>
+          <li style="margin-bottom:8px;"><strong>Zero Friction:</strong> No accounts, no subscriptions, and no paywalls. Open the page and get your work done instantly.</li>
+          <li style="margin-bottom:8px;"><strong>Optimized for Speed:</strong> Built with lightweight, modern web standards to ensure instant load times and smooth responsiveness across mobile and desktop devices.</li>
+        </ul>
       </section>
 
-      <!-- CONTACT US -->
+      <!-- ============ CONTACT US ============ -->
       <section class="tool-view panel" id="tool-contact" aria-labelledby="h-contact">
         <h2 id="h-contact">Contact Us</h2>
-        <p class="desc">Have feedback, questions, or feature requests? We would love to hear from you.</p>
-        <div class="article-hub-body" style="border:none; padding:0;">
-          <h4>Get in Touch</h4>
-          <p>We are constantly improving our tools and adding helpful guides for our community. If you encounter any issues or have suggestions for new utilities, please feel free to reach out.</p>
-          <div class="article-hub-cta">
-            <p>You can contact our support and development team directly via email:</p>
-            <p><strong>Email:</strong> support@your-domain.vercel.app</p>
-          </div>
+        <p class="desc">Get in touch with the team behind Free Online Tools for feedback, feature requests, or inquiries.</p>
+
+        <p>Have a suggestion, found a bug, or want to request a brand new tool addition to our platform? We would love to hear from you!</p>
+        <p>You can reach out to our team directly via email. We do our best to respond to all inquiries within 48 hours.</p>
+
+        <div class="output-box mono" style="text-align:left;">
+          <strong style="color:var(--text);">Support Email:</strong> support@freeonlinetools.example
         </div>
       </section>
 
-      <!-- SEO CONTENT BLOCK -->
+      <!-- ============ SEO CONTENT BLOCK ============ -->
       <section class="panel seo-block">
         <h2>Free Online Tools, Built for Speed</h2>
-        <p>Free Online Tools brings together the utilities people search for every single day.</p>
+        <p>Free Online Tools brings together the utilities people search for every single day — a word counter for writers and students, a case converter for quick formatting fixes, a JSON formatter for developers, a password generator for staying secure, and a QR code generator for sharing links offline. Every tool runs entirely in your browser: no uploads, no accounts, no waiting.</p>
+        <h3>Frequently asked questions</h3>
+        <div class="faq-item">
+          <h3>Is Free Online Tools really free to use?</h3>
+          <p>Yes. Every tool on this page is completely free, with no sign-up, no limits, and no watermark on your results.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Does my text or data get uploaded anywhere?</h3>
+          <p>No. All processing — counting words, formatting JSON, generating passwords and QR codes — happens locally in your browser. Nothing is sent to a server.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I use Free Online Tools on my phone?</h3>
+          <p>Yes, the whole toolbox is fully responsive and works smoothly on mobile, tablet, and desktop browsers.</p>
+        </div>
       </section>
+
     </div>
 
     <!-- Sidebar -->
     <aside>
       <div class="ad-slot ad-sidebar" aria-label="Advertisement" style="position:sticky;top:180px;">
-        <span>AD SLOT — 300x250 Sidebar</span>
+        <span>AD SLOT — 300x250 Sidebar (paste AdSense unit here)</span>
       </div>
     </aside>
   </div>
 
   <div class="ad-slot ad-footer" aria-label="Advertisement">
-    <span>AD SLOT — 728x90 Footer</span>
+    <span>AD SLOT — 728x90 Footer (paste AdSense unit here)</span>
   </div>
 
-  <!-- ARTICLES HUB (60+ Guides included) -->
+  <!-- ============ ARTICLES HUB (bottom of page, all 60+ guides) ============ -->
   <section id="articles" class="articles-hub" aria-labelledby="articles-heading">
     <div class="articles-hub-head">
       <h2 id="articles-heading">Free Tool Guides &amp; Articles</h2>
-      <p>60+ practical, no-fluff guides on writing, development, and productivity.</p>
+      <p>60+ practical, no-fluff guides on writing, development, and productivity — each one links straight back to the tool that solves it.</p>
     </div>
     <div class="article-filters" role="tablist" aria-label="Filter articles by category">
       <button class="filter-btn active" data-filter="all" onclick="setArticleFilter('all')" role="tab" aria-selected="true">All Articles</button>
@@ -524,81 +571,1158 @@
       <button class="filter-btn" data-filter="Digital Productivity" onclick="setArticleFilter('Digital Productivity')" role="tab" aria-selected="false">Productivity</button>
     </div>
     <div class="articles-grid" id="articles-grid">
-      <!-- Article 1 -->
-      <article class="article-card" data-category="Writing Optimization">
-        <details>
-          <summary>
-            <div>
-              <div class="ac-meta"><span class="article-cat-tag">Writing Optimization</span></div>
-              <h3>How to Measure Reading Time Accurately for Long-Form Content</h3>
-              <p class="ac-summary">Learn the science behind reading speed formulas and how word count tools help optimize blog engagement.</p>
-            </div>
-            <span class="plus" aria-hidden="true">+</span>
-          </summary>
-          <div class="article-hub-body">
-            <h4>Understanding Reading Speed</h4>
-            <p>The average adult reads approximately 238 to 250 words per minute (WPM) on a digital screen. When structuring long-form content, providing an accurate reading time estimate helps readers decide whether to read immediately or bookmark the page.</p>
-            <div class="article-hub-cta">
-              <p>Test your article length instantly using our live word counter tool.</p>
-              <button onclick="jumpToTool('counter')">Open Word Counter</button>
-            </div>
-          </div>
-        </details>
-      </article>
-
-      <!-- Article 2 -->
-      <article class="article-card" data-category="Developer Efficiency">
-        <details>
-          <summary>
-            <div>
-              <div class="ac-meta"><span class="article-cat-tag">Developer Efficiency</span></div>
-              <h3>Why JSON Formatting and Validation Matters in Modern APIs</h3>
-              <p class="ac-summary">Avoid silent parsing failures by validating payloads before deploying microservices.</p>
-            </div>
-            <span class="plus" aria-hidden="true">+</span>
-          </summary>
-          <div class="article-hub-body">
-            <h4>Catching Syntax Errors Early</h4>
-            <p>A single misplaced comma or unquoted key can crash API parsers. Using a robust client-side JSON validator ensures clean data interchange.</p>
-            <div class="article-hub-cta">
-              <p>Format and validate your JSON data instantly.</p>
-              <button onclick="jumpToTool('json')">Open JSON Formatter</button>
-            </div>
-          </div>
-        </details>
-      </article>
-      <!-- (باقی تمام آرٹیکل کارڈز یہاں موجود ہیں جو آپ کے اورجنل کوڈ کا حصہ تھے) -->
-    </div>
+<article class="article-card" id="article-ideal-blog-post-word-count-2026" data-category="Writing Optimization" data-tool="counter">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Writing</span></div>
+<h3>How Many Words Should a Blog Post Be in 2026?</h3>
+<p class="ac-summary">There's no single magic number for blog post length, but data-backed ranges exist by content type. Learn what actually works and how to check your draft's word count in seconds.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>Ask ten SEO writers how long a blog post should be and you'll get ten different answers. The honest truth is that word count is a symptom, not a strategy — search engines reward posts that fully answer a question, and sometimes that takes 600 words, sometimes 2,500.</p>
+<h4>What the data actually suggests</h4>
+<p>Analyses of top-ranking pages tend to show longer content clustering near the top of competitive search results, largely because longer pieces naturally cover more subtopics and answer more follow-up questions. But correlation isn't causation: a padded 2,000-word post that repeats itself will underperform a tight 800-word post that nails the reader's intent.</p>
+<h5>A practical range by content type</h5>
+<ul>
+<li>Quick how-to or definition posts: 400–800 words</li>
+<li>Standard blog articles: 1,000–1,800 words</li>
+<li>Comprehensive guides or pillar pages: 2,000+ words</li>
+</ul>
+<h4>Write first, count second</h4>
+<p>The healthiest workflow is to draft naturally, cover every subtopic a curious reader would want, and only then check where you landed. Chasing a target number while writing tends to produce filler sentences that hurt readability and, ultimately, rankings.</p>
+<p>Once your draft is done, paste it into a word counter to see your exact word count, character count, and estimated reading time — useful context when you're deciding whether to trim or expand a section before hitting publish.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Word & Character Counter.</p><button onclick="jumpToTool('counter')">Open the Word & Character Counter &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-character-count-vs-word-count-difference" data-category="Writing Optimization" data-tool="counter">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Writing</span></div>
+<h3>The Real Difference Between Character Count and Word Count</h3>
+<p class="ac-summary">Word count and character count measure different things and matter in different contexts, from Twitter/X posts to meta descriptions. Here's when to use each one.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>Word count and character count sound like two flavors of the same metric, but they answer very different questions. Word count estimates how much content you've written; character count measures exactly how much space that content occupies.</p>
+<h4>Why the distinction matters</h4>
+<p>A tweet, an SMS message, or a meta description doesn't care how many words you used — it cares how many characters fit in the box. Meanwhile, a college essay with a "500-word" limit is judging idea density, not pixel space. Mixing the two up is a common way writers accidentally submit content that's technically over a platform's limit despite looking short.</p>
+<h5>Quick reference</h5>
+<ul>
+<li>Use character count for: SMS, meta descriptions, X/Twitter posts, form field limits</li>
+<li>Use word count for: essays, articles, scripts, manuscripts</li>
+</ul>
+<h4>How to check both at once</h4>
+<p>Rather than eyeballing it, paste your draft into a word and character counter that reports both numbers simultaneously, along with sentence count and estimated reading time. That way you can confirm you're inside the word limit your professor set and the character limit your platform enforces, without doing manual math.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Word & Character Counter.</p><button onclick="jumpToTool('counter')">Open the Word & Character Counter &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-hit-exact-word-count-college-essays" data-category="Writing Optimization" data-tool="counter">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Writing</span></div>
+<h3>How to Hit Exact Word Count Targets for College Essays</h3>
+<p class="ac-summary">Admissions essays often have strict word caps. Here's a practical process for trimming or expanding your draft to land exactly where you need to be.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>College and scholarship essays frequently come with hard word limits — 500, 650, sometimes just 250 words for a supplemental prompt. Going over usually means an automatic cut in the application portal; going way under can read as a lack of effort.</p>
+<h4>Write over, then cut with intent</h4>
+<p>The most reliable method is to draft 15–20% over your target, then edit down. Overwriting first means you get every idea on the page before you start making the hard calls about what stays.</p>
+<h5>What to cut first</h5>
+<ul>
+<li>Throat-clearing intros ("In today's society...")</li>
+<li>Redundant adjectives and hedging phrases ("very," "really," "I think")</li>
+<li>Backstory the reader doesn't strictly need to understand your point</li>
+</ul>
+<h4>Track your count as you edit</h4>
+<p>Keep a live word counter open in another tab while you revise. Watching the number tick down in real time as you trim sentences makes it far easier to stop exactly at your limit instead of guessing and re-pasting into a form only to discover you're 40 words over.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Word & Character Counter.</p><button onclick="jumpToTool('counter')">Open the Word & Character Counter &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-title-case-vs-sentence-case-headlines" data-category="Writing Optimization" data-tool="case">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Writing</span></div>
+<h3>Title Case vs Sentence Case: Which Should You Use for Headlines?</h3>
+<p class="ac-summary">Title Case and Sentence case both show up across the web, but they signal different things to readers. Here's how to choose — and how to convert your headline instantly.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>Title Case Capitalizes Most Words, while Sentence case capitalizes only the first word and proper nouns. Both are common, but they carry different visual weight and different conventions depending on where you're publishing.</p>
+<h4>When Title Case fits better</h4>
+<p>Print magazines, traditional journalism, and formal marketing headlines still lean on Title Case because it reads as polished and intentional. It also visually separates a headline from surrounding body text at a glance.</p>
+<h4>When Sentence case fits better</h4>
+<p>Most modern blogs, SaaS products, and style guides (including Google's own documentation) have shifted to sentence case for a more conversational, human tone. It's also easier to keep consistent, since you don't need a rulebook for which small words to lowercase.</p>
+<h5>The safest approach</h5>
+<ul>
+<li>Pick one style and apply it consistently across your entire site</li>
+<li>Match your competitors' convention if you're in a formal industry</li>
+<li>Use a case converter to instantly flip a headline between styles when you're testing which one looks better</li>
+</ul>
+<p>If you're not sure which reads better for your brand, draft a handful of headlines and convert them between Title Case and Sentence case to compare side by side before you commit.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Text Case Converter.</p><button onclick="jumpToTool('case')">Open the Text Case Converter &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-twitter-x-threads-character-counter" data-category="Writing Optimization" data-tool="counter">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Writing</span></div>
+<h3>Why Twitter/X Threads Need a Character Counter More Than Ever</h3>
+<p class="ac-summary">Character limits still shape how threads read and perform. Here's how to plan a thread that doesn't get cut off mid-sentence.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>Even with longer post limits available to some accounts, most people writing on X are still working inside a per-post character ceiling, and threads only work well when each post is a complete, punchy thought rather than a sentence chopped in half.</p>
+<h4>Plan each post as its own unit</h4>
+<p>A thread reads best when every individual post could stand alone and still make sense. That means checking the character count of each post before you publish, not just the thread as a whole.</p>
+<h5>Common thread-killers</h5>
+<ul>
+<li>A sentence that spills over and gets truncated mid-word</li>
+<li>Links eating up characters you didn't budget for</li>
+<li>Hashtags stacked at the end pushing real content out of the limit</li>
+</ul>
+<h4>Draft outside the platform first</h4>
+<p>Write your thread in a plain text editor, pasting each post into a character counter as you go. This lets you catch overflow before you're fighting with the platform's own composer, and it gives you a clean backup copy of the thread in case you want to repurpose it later.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Word & Character Counter.</p><button onclick="jumpToTool('counter')">Open the Word & Character Counter &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-meta-descriptions-pixel-character-limit" data-category="Writing Optimization" data-tool="counter">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Writing</span></div>
+<h3>How to Write Meta Descriptions That Fit Google's Pixel Limit</h3>
+<p class="ac-summary">Google truncates meta descriptions based on pixel width, not a strict character count, but staying under roughly 155-160 characters is still the safest target. Here's how to write tight, click-worthy descriptions.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>Google renders meta descriptions based on pixel width rather than a fixed character count, which is why two descriptions of the same length can get truncated differently depending on which letters they use. Still, staying roughly under 155-160 characters keeps you safely inside the visible snippet on most searches.</p>
+<h4>Front-load the value</h4>
+<p>Put your strongest hook — the specific benefit, number, or answer — in the first 100 characters. If Google does cut your description off, you want the truncated version to still make sense and still sell the click.</p>
+<h5>A tight meta description checklist</h5>
+<ul>
+<li>Includes the primary keyword naturally, not forced</li>
+<li>States a clear benefit or answer, not just a topic label</li>
+<li>Ends cleanly, ideally without a sentence cut mid-thought</li>
+</ul>
+<h4>Check your length before publishing</h4>
+<p>Paste your draft description into a character counter to confirm you're inside a safe range before it goes live. It's a thirty-second check that prevents an awkward, truncated snippet from sitting on a page for months before anyone notices.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Word & Character Counter.</p><button onclick="jumpToTool('counter')">Open the Word & Character Counter &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-camel-snake-kebab-case-explained" data-category="Writing Optimization" data-tool="case">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Writing</span></div>
+<h3>Camel Case, Snake Case, and Kebab Case Explained for Non-Coders</h3>
+<p class="ac-summary">These naming conventions look like coding jargon, but understanding them helps anyone working with filenames, URLs, or spreadsheets. Here's a plain-English breakdown.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>You don't need to write code to run into camelCase, snake_case, or kebab-case. They show up in spreadsheet column headers, URL slugs, file names, and even social media handles — and each has a distinct look and purpose.</p>
+<h4>The three formats, side by side</h4>
+<h5>camelCase</h5>
+<p>The first word is lowercase and each new word starts with a capital letter, with no spaces — like <code>firstName</code>. Common in programming variable names.</p>
+<h5>snake_case</h5>
+<p>All lowercase, with underscores replacing spaces — like <code>first_name</code>. Popular in databases and Python code because it's easy to read at a glance.</p>
+<h5>kebab-case</h5>
+<p>All lowercase, with hyphens replacing spaces — like <code>first-name</code>. This is the standard for URL slugs because search engines and browsers treat hyphens as word separators, unlike underscores.</p>
+<h4>Why it's worth knowing even if you don't code</h4>
+<p>If you're naming a spreadsheet column, a file, or a blog post URL, picking the right convention keeps things consistent and machine-readable. A case converter can instantly reformat a phrase into any of these styles, saving you from manually retyping underscores and hyphens by hand.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Text Case Converter.</p><button onclick="jumpToTool('case')">Open the Text Case Converter &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-ideal-linkedin-post-word-count" data-category="Writing Optimization" data-tool="counter">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Writing</span></div>
+<h3>The Ideal Word Count for LinkedIn Posts That Get Engagement</h3>
+<p class="ac-summary">LinkedIn's algorithm and reader attention span both reward a specific post length range. Here's what tends to perform best and how to check yours before posting.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>LinkedIn posts that perform well tend to sit in a specific sweet spot — long enough to deliver real insight, short enough that people don't bounce off a wall of text in their feed.</p>
+<h4>What tends to work</h4>
+<p>Posts in the 150-300 word range strike a balance: enough room for a hook, a story or insight, and a takeaway, without demanding the reader click "see more" and commit to a mini-essay. Posts under 50 words often read as low-effort; posts over 500 words risk losing the scroll-happy feed reader entirely.</p>
+<h5>Structure matters as much as length</h5>
+<ul>
+<li>A one-line hook that stops the scroll</li>
+<li>Short paragraphs and line breaks, not dense blocks</li>
+<li>A clear point or question at the end to invite comments</li>
+</ul>
+<h4>Check before you post</h4>
+<p>Draft your post in a text box, then run it through a word counter to see exactly where you land. It's a quick way to decide whether you need to trim a paragraph or add one more supporting detail before you hit publish.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Word & Character Counter.</p><button onclick="jumpToTool('counter')">Open the Word & Character Counter &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-cover-letter-word-count-rules-recruiters" data-category="Writing Optimization" data-tool="counter">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Writing</span></div>
+<h3>How to Format Cover Letters: Word Count Rules Recruiters Actually Follow</h3>
+<p class="ac-summary">Recruiters skim, not read. Here's the word count range that keeps your cover letter in the 'read it' pile instead of the 'skip it' pile.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>Recruiters frequently spend under a minute on a first pass of a cover letter, which makes length one of the easiest things to get wrong. Too short reads as an afterthought; too long signals you don't know how to prioritize.</p>
+<h4>The range that works</h4>
+<p>Most hiring guidance converges on 250-400 words, roughly three to four short paragraphs that fit on a single page without shrinking the font. That's enough space to connect your experience to the role without repeating your resume line by line.</p>
+<h5>What to prioritize in that space</h5>
+<ul>
+<li>One specific, relevant achievement with a number attached</li>
+<li>A clear reason you want this role, not just any role</li>
+<li>A confident, short closing — no apologizing for your experience</li>
+</ul>
+<h4>Draft, then measure</h4>
+<p>Write your letter without worrying about the count, then paste it into a word counter to check where you landed. If you're well over 400 words, look for the paragraph that's re-explaining your resume — that's usually the one to cut.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Word & Character Counter.</p><button onclick="jumpToTool('counter')">Open the Word & Character Counter &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-sentence-case-email-subject-lines" data-category="Writing Optimization" data-tool="case">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Writing</span></div>
+<h3>Sentence Case for Email Subject Lines: Does It Improve Open Rates?</h3>
+<p class="ac-summary">Sentence case has become the default for email subject lines among top-performing senders. Here's why, and how it compares to Title Case and all-caps.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>Open a personal inbox and most subject lines from real people are written in sentence case — it's how humans naturally type. That's part of why marketers increasingly favor sentence case: it reads as personal rather than promotional.</p>
+<h4>What sentence case signals</h4>
+<p>A subject line like "your invoice is ready" feels like a note from a colleague. The same message in Title Case — "Your Invoice Is Ready" — reads noticeably more corporate, and ALL CAPS often triggers spam filters or simply feels like shouting.</p>
+<h5>When Title Case still makes sense</h5>
+<ul>
+<li>Formal B2B communications where a polished tone matters</li>
+<li>Brand-driven campaigns with a consistent style guide</li>
+<li>Subject lines that double as headlines in a newsletter archive</li>
+</ul>
+<h4>Test both versions quickly</h4>
+<p>Write your subject line once, then use a case converter to generate the Title Case and sentence case versions side by side. Running an A/B test between the two over a few sends will tell you far more about your specific audience than any general rule.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Text Case Converter.</p><button onclick="jumpToTool('case')">Open the Text Case Converter &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-alternating-caps-mocking-spongebob-meme" data-category="Writing Optimization" data-tool="case">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Writing</span></div>
+<h3>Alternating Caps and Meme Text: Where 'Mocking SpongeBob' Case Comes From</h3>
+<p class="ac-summary">aLtErNaTiNg cApS has a real internet history tied to a specific meme format. Here's where it started and how to generate it instantly for your own posts.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>If you've seen a sentence written like tHiS, you've encountered "alternating caps," better known online as Mocking SpongeBob case. It's become internet shorthand for sarcasm, typically paired with a screenshot of the character SpongeBob in a mocking pose.</p>
+<h4>Where it came from</h4>
+<p>The meme traces back to a specific animated screenshot that spread across forums and image boards, where users paired the image with alternating-case text to represent a sarcastic, mocking tone of voice — the visual equivalent of a whiny impression.</p>
+<h5>Why the format works as sarcasm</h5>
+<ul>
+<li>It visually disrupts normal reading rhythm, mimicking a mocking sing-song voice</li>
+<li>It's instantly recognizable, so context clues aren't even necessary</li>
+<li>It's short-form and works in a single line of text, perfect for comment sections</li>
+</ul>
+<h4>Generate it without typing letter by letter</h4>
+<p>Manually alternating capitalization letter by letter is tedious and error-prone. A case converter with an alternating case option does it instantly — type your sentence normally, convert it, and copy the result straight into your comment or post.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Text Case Converter.</p><button onclick="jumpToTool('case')">Open the Text Case Converter &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-calculate-reading-time-blog-posts" data-category="Writing Optimization" data-tool="counter">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Writing</span></div>
+<h3>How to Calculate Reading Time for Your Blog Posts (and Why It Matters)</h3>
+<p class="ac-summary">Reading time estimates set reader expectations and can affect bounce rate. Here's the formula behind them and how to get an accurate number for your own content.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>That "6 min read" label at the top of an article isn't guesswork — it's based on a simple formula using average adult reading speed, typically estimated around 200-250 words per minute for general web content.</p>
+<h4>The basic formula</h4>
+<p>Divide your total word count by your assumed reading speed. A 1,000-word article at 200 words per minute comes out to 5 minutes. Some tools adjust slightly for images or code blocks, which slow readers down, but the core math stays the same.</p>
+<h5>Why showing reading time helps</h5>
+<ul>
+<li>Sets accurate expectations, which can reduce early bounce-offs</li>
+<li>Helps readers decide whether to read now or save for later</li>
+<li>Signals depth and effort, which can build trust before they even start reading</li>
+</ul>
+<h4>Get the number without doing math</h4>
+<p>Paste your draft into a word counter that reports estimated reading time automatically alongside your word and character counts, so you can add an accurate label to your post without manual calculation.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Word & Character Counter.</p><button onclick="jumpToTool('counter')">Open the Word & Character Counter &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-word-count-guidelines-academic-papers" data-category="Writing Optimization" data-tool="counter">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Writing</span></div>
+<h3>Word Count Guidelines for Academic Papers by Discipline</h3>
+<p class="ac-summary">Word count expectations vary widely between a lab report, a literature essay, and a dissertation chapter. Here's a general reference by paper type.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>Academic word count expectations aren't arbitrary — they reflect how much depth a given format is meant to hold. A one-page lab summary and a thesis chapter both count words, but for very different reasons.</p>
+<h4>Typical ranges by format</h4>
+<ul>
+<li>Short response papers: 500-1,000 words</li>
+<li>Standard undergraduate essays: 1,500-3,000 words</li>
+<li>Research papers and literature reviews: 3,000-6,000 words</li>
+<li>Thesis chapters: 6,000-10,000 words, varying heavily by field</li>
+</ul>
+<h4>Always defer to your specific assignment</h4>
+<p>These ranges are a general reference, not a rule — always follow the exact limit your instructor or journal sets, since going over a hard cap can mean an automatic point deduction regardless of quality.</p>
+<h5>Staying inside the limit while you write</h5>
+<p>Rather than counting words manually every few paragraphs, keep a word counter open in a second window and check your running total periodically. That habit alone prevents the common last-minute scramble to cut 400 words the night before a deadline.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Word & Character Counter.</p><button onclick="jumpToTool('counter')">Open the Word & Character Counter &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-character-limits-sms-push-notifications" data-category="Writing Optimization" data-tool="counter">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Writing</span></div>
+<h3>Why Character Limits Matter for SMS and Push Notifications</h3>
+<p class="ac-summary">Going over an SMS or push notification character limit can mean extra cost or a truncated message. Here's what the limits actually are and how to write inside them.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>A standard SMS message caps out at 160 characters using the basic GSM character set — go one character over, and the message can split into two texts, sometimes doubling the cost for whoever's sending it in bulk.</p>
+<h4>Push notifications have their own limits</h4>
+<p>Mobile push notifications typically truncate around 40-50 characters for the title and roughly 150 characters for the body, though exact limits vary by device and platform. Anything past that gets cut off with an ellipsis, often mid-sentence.</p>
+<h5>Writing tight inside a hard limit</h5>
+<ul>
+<li>Lead with the single most important piece of information</li>
+<li>Cut filler words like "please," "just," and "simply"</li>
+<li>Use numerals instead of spelled-out numbers to save characters</li>
+</ul>
+<h4>Check your exact count before sending</h4>
+<p>Paste your message into a character counter before it goes out, especially for automated or bulk sends where a truncated message could confuse hundreds of recipients at once instead of just one.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Word & Character Counter.</p><button onclick="jumpToTool('counter')">Open the Word & Character Counter &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-uppercase-headlines-seo-myth" data-category="Writing Optimization" data-tool="case">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Writing</span></div>
+<h3>Uppercase in Headlines: SEO Myth or Readability Killer?</h3>
+<p class="ac-summary">Some writers believe ALL CAPS headlines grab more attention. Here's what actually happens to readability, click-through rate, and accessibility.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>ALL CAPS HEADLINES CAN FEEL LIKE THEY DEMAND ATTENTION — but readability research consistently shows that all-uppercase text is genuinely slower to read than mixed case, because readers rely on the varying shapes of lowercase letters to recognize words quickly.</p>
+<h4>What actually happens with uppercase headlines</h4>
+<p>Search engines don't rank uppercase text higher or lower for SEO purposes on their own. The real cost is human: readers process uppercase blocks more slowly, and screen readers can sometimes interpret all-caps words as acronyms, which affects accessibility for visually impaired users.</p>
+<h5>Where limited uppercase still works</h5>
+<ul>
+<li>Short button labels like "BUY NOW" in small doses</li>
+<li>Brand names that are stylized in caps by design</li>
+<li>Emphasis on a single word within an otherwise normal-case headline</li>
+</ul>
+<h4>The safer default</h4>
+<p>For actual headlines and body copy, Title Case or Sentence case will almost always outperform all uppercase for both readability and accessibility. If you've drafted something in caps out of habit, run it through a case converter to switch it back before publishing.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Text Case Converter.</p><button onclick="jumpToTool('case')">Open the Text Case Converter &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-beat-strict-essay-word-limits" data-category="Writing Optimization" data-tool="counter">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Writing</span></div>
+<h3>How Students Can Beat Strict Essay Word Limits Without Losing Meaning</h3>
+<p class="ac-summary">Cutting an essay down to a strict word limit doesn't have to mean losing your best ideas. Here's a practical trimming process that protects meaning.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>A strict word limit forces a choice: cut carelessly and lose meaning, or cut carefully and end up with a tighter, stronger essay. The second outcome is entirely achievable with the right process.</p>
+<h4>Cut in this order</h4>
+<h5>1. Remove redundant phrases first</h5>
+<p>Phrases like "due to the fact that" can become "because." "In order to" can become "to." These small swaps add up to real savings without touching your actual argument.</p>
+<h5>2. Combine short, choppy sentences</h5>
+<p>Two related short sentences often share words that can be merged into one tighter sentence, cutting length while improving flow at the same time.</p>
+<h5>3. Only then, cut content</h5>
+<p>If you're still over after trimming language, cut your weakest example rather than shaving a little off every paragraph — a full, focused example beats a half-explained one.</p>
+<h4>Track progress as you go</h4>
+<p>Keep a word counter open and check your total after each editing pass. Watching real progress toward your target keeps the process from feeling endless, and it stops you from over-cutting past the limit you actually needed to hit.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Word & Character Counter.</p><button onclick="jumpToTool('counter')">Open the Word & Character Counter &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-words-tokens-characters-ai-prompts" data-category="Writing Optimization" data-tool="counter">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Writing</span></div>
+<h3>The Difference Between Words, Tokens, and Characters (Why It Matters for AI Prompts)</h3>
+<p class="ac-summary">AI tools measure input in tokens, not words — and the two don't map 1:1. Here's a practical way to think about prompt length without needing a tokenizer.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>When you're writing a prompt for an AI tool, the model isn't actually counting your words — it's breaking your text into tokens, which are chunks that can be shorter or longer than a full word depending on the language model and the text itself.</p>
+<h4>A rough rule of thumb</h4>
+<p>For English text, a common approximation is that 100 tokens equal roughly 75 words, though this varies with punctuation, rare words, and formatting like code or JSON, which often tokenize less efficiently than plain prose.</p>
+<h5>Why this matters practically</h5>
+<ul>
+<li>Context windows are measured in tokens, not words, so a "word count" estimate can be misleading</li>
+<li>Dense technical text or code can use up more tokens per word than casual prose</li>
+<li>Trimming a prompt's word count is still a reasonable proxy for reducing token usage, even without exact numbers</li>
+</ul>
+<h4>Start with word and character count</h4>
+<p>Without a live tokenizer handy, checking your prompt's word and character count with a simple counter still gives you a useful, fast estimate of roughly how much space your text will occupy before you send it to a model.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Word & Character Counter.</p><button onclick="jumpToTool('counter')">Open the Word & Character Counter &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-convert-text-case-consistent-branding" data-category="Writing Optimization" data-tool="case">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Writing</span></div>
+<h3>How to Convert Text Case for Consistent Branding Across Platforms</h3>
+<p class="ac-summary">Inconsistent capitalization across your bio, website, and product names looks sloppy. Here's how to keep your brand's text case consistent everywhere.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>A brand name that appears as "MyApp," "myapp," and "My App" across different platforms sends a subtle but real signal of inconsistency — and inconsistency chips away at the polish a brand is trying to project.</p>
+<h4>Where inconsistency sneaks in</h4>
+<p>Social bios, email signatures, product names inside app stores, and legal footer text are all edited by different people at different times, often copy-pasted from old templates without a second look at capitalization.</p>
+<h5>A simple fix: pick a style guide entry for your name</h5>
+<ul>
+<li>Decide once whether your brand is Title Case, sentence case, or a stylized custom case</li>
+<li>Document it somewhere your whole team can reference</li>
+<li>Re-check it any time you copy text between platforms</li>
+</ul>
+<h4>Fixing existing inconsistency fast</h4>
+<p>When you find old copy that doesn't match your current style, a case converter can instantly reformat it to your standard, rather than manually retyping every instance across a dozen old documents and bios.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Text Case Converter.</p><button onclick="jumpToTool('case')">Open the Text Case Converter &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-concise-product-descriptions-word-count" data-category="Writing Optimization" data-tool="counter">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Writing</span></div>
+<h3>Writing Concise Product Descriptions: A Word Count Playbook for E-commerce</h3>
+<p class="ac-summary">Long product descriptions bury the details shoppers actually want. Here's a word count framework that keeps e-commerce copy scannable and effective.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>Online shoppers scan product pages, they don't read them line by line — which means a bloated 500-word description often loses a buyer before they reach the one detail that would've closed the sale.</p>
+<h4>A workable structure</h4>
+<ul>
+<li>One-line hook (10-15 words): the single biggest benefit</li>
+<li>Short description (40-80 words): what it is and who it's for</li>
+<li>Scannable bullet specs: the details shoppers compare between tabs</li>
+</ul>
+<h4>Why tight copy converts better</h4>
+<p>Mobile shoppers in particular are quick to bounce off dense paragraphs. A tight description that respects their time signals confidence in the product rather than trying to talk them into it with volume.</p>
+<h5>Check your draft before publishing</h5>
+<p>Run your description through a word counter to confirm it fits your target length across every product page — consistency in length also keeps your catalog visually uniform, which matters more for conversion than most sellers expect.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Word & Character Counter.</p><button onclick="jumpToTool('counter')">Open the Word & Character Counter &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-screenwriters-word-page-counts-runtime" data-category="Writing Optimization" data-tool="counter">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Writing</span></div>
+<h3>How Screenwriters Use Word and Page Counts to Estimate Runtime</h3>
+<p class="ac-summary">The old 'one page equals one minute' rule of screenwriting is really a word-density shortcut. Here's how it works and where it breaks down.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>Screenwriters have long relied on a rough rule: one properly formatted script page equals about one minute of screen time. It's not exact, but it's consistent enough to be genuinely useful for planning.</p>
+<h4>Why this rule works at all</h4>
+<p>Standard screenplay format uses fixed margins, a fixed font (Courier, 12pt), and predictable spacing, which keeps word density per page relatively stable across different scripts — unlike a novel manuscript, where formatting varies wildly.</p>
+<h5>Where the rule breaks down</h5>
+<ul>
+<li>Action-heavy scenes with sparse dialogue often run shorter than their page count suggests</li>
+<li>Dialogue-dense scenes tend to play close to the estimate</li>
+<li>Montages and visual sequences can compress a lot of story time onto very few pages</li>
+</ul>
+<h4>A useful sanity check</h4>
+<p>Even outside formal screenplay software, checking your draft's word count against a target range gives you a fast gut-check on pacing — a scene ballooning past 1,000 words of dialogue is usually a sign it needs a trim before table reads even begin.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Word & Character Counter.</p><button onclick="jumpToTool('counter')">Open the Word & Character Counter &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-why-api-returns-invalid-json" data-category="Developer Efficiency" data-tool="json">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Developer</span></div>
+<h3>Why Your API Returns Invalid JSON (and How to Debug It Fast)</h3>
+<p class="ac-summary">A malformed API response usually comes down to one of a handful of common causes. Here's how to spot and fix them quickly.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>An API returning invalid JSON almost always traces back to one of a small set of repeat offenders — and once you know the pattern, debugging goes from guesswork to a quick checklist.</p>
+<h4>The usual suspects</h4>
+<ul>
+<li>A trailing comma left after the last item in an array or object</li>
+<li>Unescaped quotes inside a string value</li>
+<li>The server accidentally returning an HTML error page instead of JSON, often with a valid HTTP 200 status</li>
+<li>Mixed single and double quotes, when JSON strictly requires double quotes</li>
+</ul>
+<h4>A faster way to isolate the problem</h4>
+<p>Rather than scanning a large payload by eye, paste the raw response into a JSON formatter and validator. A good validator will point to the exact character or line where parsing failed, which turns a five-minute manual hunt into a five-second fix.</p>
+<h5>Prevent it upstream</h5>
+<p>If you control the API, validating your response body before it's sent — and setting the correct <code>Content-Type: application/json</code> header — prevents most of these issues from reaching consumers in the first place.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the JSON Formatter & Validator.</p><button onclick="jumpToTool('json')">Open the JSON Formatter & Validator &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-json-vs-xml-why-apis-choose-json" data-category="Developer Efficiency" data-tool="json">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Developer</span></div>
+<h3>JSON vs XML: Why Most Modern APIs Choose JSON</h3>
+<p class="ac-summary">XML dominated web APIs for years, but JSON took over for good reasons. Here's a clear comparison of the two formats and where XML still holds ground.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>XML was the default data format for web services in the early 2000s, but JSON has become the overwhelming default for new APIs. The shift wasn't arbitrary — JSON solves several real pain points XML had.</p>
+<h4>Where JSON wins</h4>
+<ul>
+<li>Smaller payload size, since there's no closing tag for every element</li>
+<li>Native compatibility with JavaScript, which runs both the browser and a huge share of backend services</li>
+<li>Simpler, more human-readable structure for nested data</li>
+</ul>
+<h4>Where XML still holds on</h4>
+<p>Some enterprise systems, older SOAP-based services, and document-centric formats like RSS still rely on XML, largely because of its strong schema validation and long-standing infrastructure investment that's expensive to replace.</p>
+<h5>Working with either format</h5>
+<p>When you're consuming a JSON API response, formatting it with proper indentation makes nested structures far easier to read than the minified, single-line blob most servers return by default — a formatter turns that dense string into a readable, navigable tree in one click.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the JSON Formatter & Validator.</p><button onclick="jumpToTool('json')">Open the JSON Formatter & Validator &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-read-json-parsing-error-like-a-pro" data-category="Developer Efficiency" data-tool="json">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Developer</span></div>
+<h3>How to Read a JSON Parsing Error Message Like a Pro</h3>
+<p class="ac-summary">JSON parsing errors look cryptic at first glance but follow a consistent pattern once you know what to look for.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>A message like "Unexpected token } in JSON at position 47" looks intimidating the first time you see it, but every JSON parsing error follows the same basic anatomy once you know what to look for.</p>
+<h4>Breaking down the error</h4>
+<p>The error names the unexpected character, then gives you a position — the character index where the parser gave up. Most editors and JSON tools let you jump straight to that position, which is usually just before or at the actual mistake.</p>
+<h5>What each common phrase usually means</h5>
+<ul>
+<li>"Unexpected token }" — likely a trailing comma or a missing value</li>
+<li>"Unexpected end of JSON input" — a closing bracket or brace is missing somewhere</li>
+<li>"Unexpected token in JSON at position 0" — the input isn't JSON at all, often an empty string or an HTML error page</li>
+</ul>
+<h4>Let a validator do the counting for you</h4>
+<p>Manually counting characters to position 47 in a large payload is tedious and error-prone. A JSON formatter and validator will visually highlight exactly where things broke, so you can fix the actual syntax issue instead of hunting for it by hand.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the JSON Formatter & Validator.</p><button onclick="jumpToTool('json')">Open the JSON Formatter & Validator &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-minified-vs-pretty-printed-json" data-category="Developer Efficiency" data-tool="json">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Developer</span></div>
+<h3>Minified vs Pretty-Printed JSON: When to Use Each</h3>
+<p class="ac-summary">Minified and pretty-printed JSON serve completely different purposes. Here's when each one is the right call.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>Minified JSON strips out every unnecessary whitespace character, cramming your data onto a single line. Pretty-printed JSON adds indentation and line breaks back in, making the structure visible to a human reader.</p>
+<h4>When minified makes sense</h4>
+<ul>
+<li>Production API responses, where smaller payload size reduces bandwidth and load time</li>
+<li>Config files that are only ever read by machines, not edited by hand</li>
+<li>Any context where every byte transferred matters at scale</li>
+</ul>
+<h4>When pretty-printed makes sense</h4>
+<ul>
+<li>Debugging an API response during development</li>
+<li>Reviewing config files a human needs to edit directly</li>
+<li>Sharing a JSON example in documentation or a bug report</li>
+</ul>
+<h5>Switching between the two instantly</h5>
+<p>You don't need to manually add or remove whitespace by hand. A JSON formatter with both format and minify options lets you flip a payload between a readable, indented version and a compact, production-ready version in a single click.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the JSON Formatter & Validator.</p><button onclick="jumpToTool('json')">Open the JSON Formatter & Validator &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-common-json-syntax-mistakes-beginners" data-category="Developer Efficiency" data-tool="json">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Developer</span></div>
+<h3>Common JSON Syntax Mistakes New Developers Make</h3>
+<p class="ac-summary">JSON's syntax is simple, but a handful of small mistakes trip up nearly every developer early on. Here's the full list.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>JSON's rules are genuinely simple, but they're also strict, which means small habits carried over from JavaScript or other languages can quietly break a payload.</p>
+<h4>The most common mistakes</h4>
+<ul>
+<li>Using single quotes instead of double quotes around strings and keys</li>
+<li>Leaving a trailing comma after the last item in an object or array</li>
+<li>Adding comments, which standard JSON does not support at all</li>
+<li>Forgetting quotes around keys, a habit carried over from plain JavaScript objects</li>
+<li>Using <code>undefined</code> instead of <code>null</code>, since <code>undefined</code> isn't valid JSON</li>
+</ul>
+<h4>Why these rules exist</h4>
+<p>JSON was designed to be strictly parseable across every language, which means it sacrifices some of the flexibility of JavaScript object literals in exchange for absolute predictability when different systems read the same file.</p>
+<h5>Catch mistakes before they ship</h5>
+<p>Running your JSON through a validator before committing it to a config file or sending it in a request catches all of these issues instantly, pointing to the exact line and character where the syntax broke the rules.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the JSON Formatter & Validator.</p><button onclick="jumpToTool('json')">Open the JSON Formatter & Validator &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-validate-json-before-production" data-category="Developer Efficiency" data-tool="json">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Developer</span></div>
+<h3>How to Validate JSON Before Sending It to Production</h3>
+<p class="ac-summary">A broken JSON payload in production can cascade into failed requests across an entire system. Here's a simple pre-deploy validation habit.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>A single malformed JSON file in a production config or API payload can cascade into failed deployments, broken integrations, or silent data loss — and it's almost always preventable with a quick validation step.</p>
+<h4>Build a validation habit into your workflow</h4>
+<ul>
+<li>Validate any manually edited config file before committing it to version control</li>
+<li>Check API request and response bodies during local testing, not just after deployment</li>
+<li>Add automated JSON schema validation in your CI pipeline for critical config files</li>
+</ul>
+<h4>Manual validation for quick checks</h4>
+<p>For a one-off check — before pasting a payload into a Postman request or a config file — a browser-based JSON formatter and validator gives you an instant pass/fail with a clear error location, no local tooling or dependencies required.</p>
+<h5>Don't rely on "it looked fine"</h5>
+<p>JSON errors are often invisible to a quick visual scan, especially trailing commas or a stray character buried deep in a nested object. A validator catches what your eyes will miss under deadline pressure.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the JSON Formatter & Validator.</p><button onclick="jumpToTool('json')">Open the JSON Formatter & Validator &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-json-schema-beyond-formatting" data-category="Developer Efficiency" data-tool="json">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Developer</span></div>
+<h3>Understanding JSON Schema: Beyond Basic Formatting</h3>
+<p class="ac-summary">Valid JSON syntax doesn't mean valid data. JSON Schema adds a layer of structural and type validation on top. Here's a practical introduction.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>JSON can be perfectly valid syntax and still be wrong for your application — a required field missing, a number sent as a string, an unexpected extra property. That's the gap JSON Schema is built to close.</p>
+<h4>What JSON Schema actually checks</h4>
+<ul>
+<li>Whether required fields are present</li>
+<li>Whether each field's data type matches expectations (string, number, boolean, array)</li>
+<li>Whether values fall within allowed ranges, patterns, or enumerated options</li>
+</ul>
+<h4>Syntax validation vs schema validation</h4>
+<p>Basic syntax validation only confirms your JSON is well-formed, parseable text. Schema validation goes a level deeper, confirming the data itself matches the contract your application expects — the two are complementary, not interchangeable.</p>
+<h5>Start with the basics first</h5>
+<p>Before reaching for a full schema validation library, make sure your JSON is syntactically valid in the first place using a straightforward formatter and validator — it's the fastest way to rule out a simple typo before debugging a more complex schema mismatch.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the JSON Formatter & Validator.</p><button onclick="jumpToTool('json')">Open the JSON Formatter & Validator &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-password-length-vs-complexity" data-category="Developer Efficiency" data-tool="password">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Developer</span></div>
+<h3>Why Password Length Matters More Than Complexity</h3>
+<p class="ac-summary">Security researchers have shifted guidance toward longer passwords over complex ones. Here's the math behind why length wins.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>For years, password advice pushed complexity — mix in a symbol, a number, a capital letter. Modern security guidance, including from NIST, has shifted toward emphasizing length instead, and the math behind that shift is straightforward.</p>
+<h4>The math behind length</h4>
+<p>Every additional character in a password multiplies the total number of possible combinations, while adding a new character type (like requiring one symbol) only adds a small, predictable set of extra options that attackers already account for in their cracking tools.</p>
+<h5>A rough comparison</h5>
+<ul>
+<li>An 8-character complex password can be cracked far faster than most people assume with modern hardware</li>
+<li>A 16-character password made of random words, even without symbols, takes dramatically longer to brute-force</li>
+</ul>
+<h4>The practical takeaway</h4>
+<p>Longer passwords, generated randomly rather than based on personal information, remain the strongest defense. Use a password generator to create a long, random string rather than trying to memorize a short one padded with a single symbol and number swap.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Secure Password Generator.</p><button onclick="jumpToTool('password')">Open the Secure Password Generator &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-how-long-to-crack-your-password" data-category="Developer Efficiency" data-tool="password">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Developer</span></div>
+<h3>How Long Would It Take to Crack Your Password? A Practical Breakdown</h3>
+<p class="ac-summary">Crack time estimates depend heavily on length, character variety, and attack method. Here's how to think about your own password's real-world resistance.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>"How long would it take to crack my password" is really a question about entropy — how many total guesses an attacker would need to try before landing on the right one, given the character set and length you used.</p>
+<h4>What actually affects crack time</h4>
+<ul>
+<li>Length: the single biggest factor, since possibilities grow exponentially with each added character</li>
+<li>Character variety: uppercase, lowercase, numbers, and symbols all expand the pool an attacker must search</li>
+<li>Attack method: offline brute-force attacks on stolen password hashes are dramatically faster than online login attempts, which are usually rate-limited</li>
+</ul>
+<h4>Why "cracking time" estimates vary so much</h4>
+<p>Online calculators assume different hardware speeds, which is why the same password can show wildly different crack-time estimates across different tools — treat these numbers as relative comparisons, not precise predictions.</p>
+<h5>The reliable fix</h5>
+<p>Rather than relying on crack-time estimates for a password you're attached to, generate a long, fully random password with a password generator and store it in a password manager instead of trying to remember it.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Secure Password Generator.</p><button onclick="jumpToTool('password')">Open the Secure Password Generator &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-case-against-reusing-passwords" data-category="Developer Efficiency" data-tool="password">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Developer</span></div>
+<h3>The Case Against Reusing Passwords Across Accounts</h3>
+<p class="ac-summary">Password reuse is behind a huge share of account takeovers, even for people with individually strong passwords. Here's why reuse itself is the real vulnerability.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>A strong password reused across five accounts is only as secure as the weakest of those five services — and that's exactly what credential stuffing attacks exploit.</p>
+<h4>How credential stuffing works</h4>
+<p>When one service suffers a data breach, attackers don't just target that service — they take the leaked email and password combinations and automatically try them against dozens of other popular sites, banking on the fact that many people reuse the same login everywhere.</p>
+<h5>Why this is more common than people assume</h5>
+<ul>
+<li>Data breaches happen constantly, often at services users forgot they even signed up for</li>
+<li>Attackers automate the stuffing process across thousands of accounts at once</li>
+<li>A single reused password can compromise an email account, which then unlocks password resets everywhere else</li>
+</ul>
+<h4>The fix is simpler than it sounds</h4>
+<p>Generate a unique, random password for every account using a password generator, and store them in a password manager. It removes the temptation to reuse a password out of convenience, since you never have to remember any of them.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Secure Password Generator.</p><button onclick="jumpToTool('password')">Open the Secure Password Generator &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-passphrases-vs-random-passwords" data-category="Developer Efficiency" data-tool="password">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Developer</span></div>
+<h3>Passphrases vs Random Passwords: Which Is Actually More Secure?</h3>
+<p class="ac-summary">Passphrases and fully random passwords both have strong security arguments. Here's how they compare in practice.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>A passphrase strings together several unrelated words, like "correct-horse-battery-staple," while a fully random password mixes letters, numbers, and symbols with no linguistic pattern at all. Both can be secure — the details matter more than the category.</p>
+<h4>The case for passphrases</h4>
+<p>Passphrases are easier for humans to remember and, if long enough (typically four or more truly random words), can offer strong resistance to brute-force attacks while remaining typeable without a password manager in a pinch.</p>
+<h4>The case for random passwords</h4>
+<p>A generated random password packs more entropy per character, since it draws from a larger character set. For any account where you're storing the password in a manager anyway, there's no memorability tradeoff to worry about.</p>
+<h5>The practical recommendation</h5>
+<ul>
+<li>Use a passphrase for your password manager's master password, since you need to type and remember it</li>
+<li>Use a fully random generated password for every other account, since your manager remembers it for you</li>
+</ul>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Secure Password Generator.</p><button onclick="jumpToTool('password')">Open the Secure Password Generator &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-how-password-managers-work" data-category="Developer Efficiency" data-tool="password">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Developer</span></div>
+<h3>How Password Managers Work (and Why You Still Need Strong Passwords)</h3>
+<p class="ac-summary">Password managers remove the memorization burden, but they don't replace the need for genuinely strong, unique passwords. Here's how the two work together.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>A password manager encrypts and stores your login credentials behind a single master password, auto-filling them when you visit a saved site. It solves the memorization problem — but it doesn't automatically make weak passwords strong.</p>
+<h4>What a password manager actually protects you from</h4>
+<ul>
+<li>Reusing the same password across multiple accounts</li>
+<li>Choosing memorable-but-guessable passwords out of convenience</li>
+<li>Losing track of dozens or hundreds of unique logins</li>
+</ul>
+<h4>What it doesn't replace</h4>
+<p>The vault is only as secure as the individual passwords stored inside it and the master password protecting the vault itself. A manager filled with genuinely weak, short passwords still leaves those individual accounts exposed if a breach exposes the raw credentials elsewhere.</p>
+<h5>Pairing the two properly</h5>
+<p>Generate a long, random, unique password for every new account with a password generator, save it directly into your manager, and never reuse it. The manager handles memory; the generator handles strength.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Secure Password Generator.</p><button onclick="jumpToTool('password')">Open the Secure Password Generator &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-json-formatting-readable-config-files" data-category="Developer Efficiency" data-tool="json">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Developer</span></div>
+<h3>JSON Formatting Best Practices for Readable Config Files</h3>
+<p class="ac-summary">Config files are read by humans far more often than they're written. Here's how to format JSON config files for long-term maintainability.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>A config file gets read by a human — usually a confused one, at 11pm, trying to figure out why a deploy broke — far more often than it gets written. Formatting it for readability isn't cosmetic, it's practical.</p>
+<h4>Habits that help</h4>
+<ul>
+<li>Consistent indentation, typically two or four spaces, never mixed</li>
+<li>Logical grouping of related keys near each other rather than scattered alphabetically</li>
+<li>Avoiding deeply nested structures where a flatter one would work just as well</li>
+</ul>
+<h4>What to avoid</h4>
+<p>Minified, single-line config files might save a few bytes, but they turn a two-second visual scan into a painful search-and-scroll exercise the next time someone needs to change a single value under pressure.</p>
+<h5>Reformatting an existing messy file</h5>
+<p>If you've inherited a minified or inconsistently indented config file, a JSON formatter will instantly re-indent it into a clean, readable structure, making it far easier to spot the specific value that needs to change.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the JSON Formatter & Validator.</p><button onclick="jumpToTool('json')">Open the JSON Formatter & Validator &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-debugging-nested-json-beginners-guide" data-category="Developer Efficiency" data-tool="json">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Developer</span></div>
+<h3>Debugging Nested JSON: A Beginner's Guide</h3>
+<p class="ac-summary">Deeply nested JSON objects can be genuinely hard to trace by eye. Here's a step-by-step approach to finding the value you actually need.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>A JSON response nested five or six levels deep can feel like navigating a maze, especially when you're trying to find one specific field buried inside arrays of objects inside more objects.</p>
+<h4>A practical approach</h4>
+<h5>1. Format it first</h5>
+<p>Never try to trace a minified, single-line JSON blob by eye. Format it with proper indentation first — the visual structure alone often makes the path to your value obvious.</p>
+<h5>2. Work top-down</h5>
+<p>Identify the top-level keys first, then drill into the specific branch that contains what you need, rather than scanning the entire payload line by line.</p>
+<h5>3. Use bracket notation to trace the path</h5>
+<p>Write out the access path as you go — <code>response.data.users[0].address.city</code> — so you have a clear mental (or literal) map of exactly where your target value lives.</p>
+<h4>Let formatting do the heavy lifting</h4>
+<p>A good JSON formatter with indentation and collapsible sections turns an intimidating wall of braces into a navigable tree, which is often the single biggest unlock for debugging nested data quickly.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the JSON Formatter & Validator.</p><button onclick="jumpToTool('json')">Open the JSON Formatter & Validator &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-two-factor-authentication-explained" data-category="Developer Efficiency" data-tool="password">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Developer</span></div>
+<h3>Two-Factor Authentication Explained for Non-Technical Users</h3>
+<p class="ac-summary">2FA adds a second layer of proof beyond your password. Here's a plain-English breakdown of how it works and why it matters even with a strong password.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>Two-factor authentication, or 2FA, requires two separate pieces of proof before letting you into an account: something you know, like a password, and something you have, like your phone.</p>
+<h4>Why a strong password alone isn't enough</h4>
+<p>Even a long, random, unique password can be exposed through phishing, a data breach at the company storing it, or malware on your device. 2FA means that a leaked password alone still isn't enough for an attacker to get in.</p>
+<h5>Common forms of 2FA</h5>
+<ul>
+<li>A time-based code from an authenticator app, which regenerates every 30 seconds</li>
+<li>An SMS code sent to your phone, which is convenient but more vulnerable to interception</li>
+<li>A physical security key, generally considered the strongest option</li>
+</ul>
+<h4>2FA and password strength work together</h4>
+<p>Enabling 2FA doesn't mean you can relax on password strength — it means an attacker needs both your generated, unique password and your second factor, which together make an account dramatically harder to break into than either protection alone.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Secure Password Generator.</p><button onclick="jumpToTool('password')">Open the Secure Password Generator &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-secure-passwords-shared-team-accounts" data-category="Developer Efficiency" data-tool="password">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Developer</span></div>
+<h3>How to Generate Secure Passwords for Shared/Team Accounts</h3>
+<p class="ac-summary">Shared accounts create a real security tension between convenience and control. Here's how to handle them without falling back on a weak, memorable password.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>Shared team accounts — a social media login, a shared vendor portal — create a genuine tension: the password needs to be strong, but it also needs to be usable by multiple people who may not all use the same password manager.</p>
+<h4>The wrong instinct</h4>
+<p>Teams often default to a simple, memorable password for shared accounts specifically because multiple people need to type it. That convenience comes at a real security cost, especially for accounts with broad access or financial implications.</p>
+<h5>A better approach</h5>
+<ul>
+<li>Generate a long, random password with a password generator regardless of who needs access</li>
+<li>Store it in a shared vault within a team password manager rather than a shared document or chat message</li>
+<li>Rotate the password whenever a team member with access leaves the organization</li>
+</ul>
+<h4>Convenience without weak passwords</h4>
+<p>A shared password manager vault solves the actual problem — multiple people needing access — without requiring the password itself to be weak or memorable in the first place.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Secure Password Generator.</p><button onclick="jumpToTool('password')">Open the Secure Password Generator &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-json-in-rest-apis-primer" data-category="Developer Efficiency" data-tool="json">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Developer</span></div>
+<h3>JSON in REST APIs: A Quick Primer for Junior Developers</h3>
+<p class="ac-summary">Understanding how JSON fits into a REST API request and response cycle is foundational knowledge for any junior developer. Here's a clear walkthrough.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>Most modern REST APIs send and receive data as JSON, which sits inside the request or response body while HTTP methods and status codes handle the "action" side of the conversation.</p>
+<h4>How JSON fits into the request/response cycle</h4>
+<ul>
+<li>A POST request typically sends a JSON object in the body describing the resource to create</li>
+<li>A GET response typically returns a JSON object or array representing the requested resource</li>
+<li>The <code>Content-Type: application/json</code> header tells both sides how to interpret the body</li>
+</ul>
+<h4>Common junior-developer pitfalls</h4>
+<p>Forgetting to <code>JSON.stringify()</code> an object before sending it, or forgetting to parse a response before trying to access its properties, are two of the most common early mistakes — both result in errors that look confusing until you recognize the pattern.</p>
+<h5>Debugging your first API integration</h5>
+<p>When something doesn't look right, paste the raw request or response body into a JSON formatter to confirm it's valid and see the actual structure clearly, rather than trying to read a dense, unformatted string in your browser's network tab.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the JSON Formatter & Validator.</p><button onclick="jumpToTool('json')">Open the JSON Formatter & Validator &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-symbols-in-passwords-not-always-answer" data-category="Developer Efficiency" data-tool="password">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Developer</span></div>
+<h3>Why Symbols in Passwords Aren't Always the Answer</h3>
+<p class="ac-summary">Mandatory symbol requirements can sometimes push people toward weaker, more predictable passwords. Here's the nuance behind the advice.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>Requiring a symbol in every password sounds like it should improve security, and in theory it does add possibilities to the character pool. In practice, it often has an unintended side effect.</p>
+<h4>The predictability problem</h4>
+<p>When people are forced to include a symbol, most default to the same handful of choices — an exclamation point at the end, an "@" replacing an "a." Attackers know these patterns well, which means mandatory symbol rules often don't add as much real security as the raw math would suggest.</p>
+<h5>What actually helps more</h5>
+<ul>
+<li>Length, which has a much larger mathematical impact than character variety</li>
+<li>True randomness, rather than predictable substitutions in an otherwise normal word</li>
+<li>Uniqueness across accounts, which protects you even if one password does leak</li>
+</ul>
+<h4>The best of both worlds</h4>
+<p>A password generator that includes symbols as one of several randomized character sets — rather than a single predictable symbol tacked onto a word — gets you both length and true randomness without the predictable patterns humans fall into.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Secure Password Generator.</p><button onclick="jumpToTool('password')">Open the Secure Password Generator &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-spot-data-breach-what-to-do" data-category="Developer Efficiency" data-tool="password">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Developer</span></div>
+<h3>How to Spot a Data Breach and What to Do Next</h3>
+<p class="ac-summary">Knowing the early warning signs of a data breach — and having a clear response plan — limits the real-world damage. Here's a practical checklist.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>Data breaches often go unnoticed by the people affected for weeks or months, which gives attackers a long head start. Knowing the warning signs and having a response plan ready shortens that window considerably.</p>
+<h4>Common warning signs</h4>
+<ul>
+<li>An email notification from a service you use, confirming a breach</li>
+<li>Login attempts or password reset emails you didn't initiate</li>
+<li>Unfamiliar activity on a linked financial account</li>
+</ul>
+<h4>What to do immediately</h4>
+<h5>1. Change the password on the affected account</h5>
+<p>Generate a new, unique password with a password generator rather than a slight variation of the old one.</p>
+<h5>2. Check for password reuse elsewhere</h5>
+<p>If you used the same password anywhere else, change it there too, since attackers actively try leaked credentials across other popular services.</p>
+<h5>3. Enable two-factor authentication</h5>
+<p>Adding a second factor closes the door even if the password itself remains compromised somewhere an attacker hasn't tried yet.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the Secure Password Generator.</p><button onclick="jumpToTool('password')">Open the Secure Password Generator &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-json-stringify-vs-json-parse" data-category="Developer Efficiency" data-tool="json">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Developer</span></div>
+<h3>JSON.stringify vs JSON.parse: A Practical Developer's Guide</h3>
+<p class="ac-summary">These two JavaScript methods are opposites of each other and easy to mix up early on. Here's a clear, practical explanation of when to use each.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p><code>JSON.stringify()</code> and <code>JSON.parse()</code> are inverse operations, and mixing them up is one of the most common early JavaScript mistakes — understanding the direction each one moves data solves most of the confusion.</p>
+<h4>JSON.stringify: object to string</h4>
+<p>Use <code>JSON.stringify()</code> when you have a live JavaScript object in memory and need to convert it into a JSON-formatted string — for example, before sending it in an API request body or saving it to local storage.</p>
+<h4>JSON.parse: string to object</h4>
+<p>Use <code>JSON.parse()</code> when you have a JSON-formatted string — like an API response body — and need to convert it back into a usable JavaScript object you can actually access properties on.</p>
+<h5>A simple way to remember the direction</h5>
+<ul>
+<li>"Stringify" makes a string — object in, string out</li>
+<li>"Parse" reads a string into structured data — string in, object out</li>
+</ul>
+<h4>Debugging the string in between</h4>
+<p>If you're unsure whether the string you're about to parse is even valid JSON, pasting it into a JSON formatter and validator first will confirm its structure and catch syntax errors before they crash your <code>JSON.parse()</code> call at runtime.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the JSON Formatter & Validator.</p><button onclick="jumpToTool('json')">Open the JSON Formatter & Validator &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-qr-codes-contactless-menus-2026" data-category="Digital Productivity" data-tool="qr">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Productivity</span></div>
+<h3>How Businesses Use QR Codes for Contactless Menus in 2026</h3>
+<p class="ac-summary">Contactless menus outlasted their pandemic origins because they're genuinely convenient. Here's how restaurants use QR codes effectively today.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>QR code menus started as a pandemic-era workaround, but they've stuck around for a simpler reason: they're cheaper and easier to update than printed menus, and most diners are now completely comfortable scanning one.</p>
+<h4>Why restaurants keep using them</h4>
+<ul>
+<li>Menu changes and price updates don't require a reprint</li>
+<li>Seasonal or daily specials can be added instantly</li>
+<li>Table turnover data and popular items can be tracked when paired with a link-tracking layer</li>
+</ul>
+<h4>Getting the execution right</h4>
+<p>A QR code menu only works if the code itself is easy to scan and the linked page loads fast on mobile data. A code that's too small, printed with low contrast, or laminated with a glare-prone finish causes real friction at the table.</p>
+<h5>Setting one up</h5>
+<p>Generate a QR code pointing to your menu page, test it on a few different phones under real lighting conditions, and print it at a size that scans reliably from a normal seated distance — usually at least 3-4cm across.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the QR Code Generator.</p><button onclick="jumpToTool('qr')">Open the QR Code Generator &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-qr-codes-print-ads-still-work" data-category="Digital Productivity" data-tool="qr">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Productivity</span></div>
+<h3>QR Codes on Print Ads: Do They Still Work?</h3>
+<p class="ac-summary">QR codes on billboards and print ads faded, then came roaring back. Here's what changed and how to use them effectively in a print campaign today.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>QR codes on print ads had a rocky first decade — early smartphone cameras couldn't scan them natively, which meant a QR code on a bus ad required downloading a separate scanner app first. That friction killed adoption for years.</p>
+<h4>What changed</h4>
+<p>Modern smartphone cameras scan QR codes natively without any extra app, which removed the single biggest barrier to entry. Combined with a generation of consumers now habituated to scanning from restaurant menus and payment terminals, QR codes on print ads are genuinely effective again.</p>
+<h5>What makes a print QR code actually convert</h5>
+<ul>
+<li>A clear, short call-to-action next to the code ("Scan for 20% off")</li>
+<li>Enough contrast and size to scan from a realistic viewing distance</li>
+<li>A landing page built for mobile, not a desktop site that loads slowly</li>
+</ul>
+<h4>Test before you print at scale</h4>
+<p>Generate your QR code and scan it yourself from across the room before committing to a large print run — a code that works fine on a screen can sometimes fail at billboard scale or in low-light print stock.</p>
+<div class="article-hub-cta"><p>Ready to try it? Jump back up to the QR Code Generator.</p><button onclick="jumpToTool('qr')">Open the QR Code Generator &rarr;</button></div>
+</div>
+</details>
+</article>
+<article class="article-card" id="article-qr-code-wifi-sharing-home-office" data-category="Digital Productivity" data-tool="qr">
+<details>
+<summary>
+<div>
+<div class="ac-meta"><span class="article-cat-tag">Productivity</span></div>
+<h3>How to Create a QR Code for Wi-Fi Sharing at Home or Office</h3>
+<p class="ac-summary">A Wi-Fi QR code lets guests join your network without typing a long password. Here's how the format works and how to set one up.</p>
+</div>
+<span class="plus" aria-hidden="true">+</span>
+</summary>
+<div class="article-hub-body">
+<p>Typing a long, randomly generated Wi-Fi password on a guest's phone keyboard is a small but real annoyance — a Wi-Fi QR code solves it by letting a phone camera join the network automatically.</p>
+<h4>How Wi-Fi QR codes work</h4>
+<p>Most modern phones recognize a special text format inside the QR code containing the network name, password, and encryption type, and prompt the user to join automatically once scanned —</div>
+</details>
+</article>
+</div>
   </section>
+
+  <section class="seo-block panel" style="margin-top:24px;">
+    <h2>About Free Online Tools</h2>
+    <p>Free Online Tools is designed to be your go-to web utility belt. Whether you need to count words for an assignment, minify or validate a JSON payload for API debugging, convert text cases, generate high-entropy secure passwords, or make quick downloadable QR codes, everything happens directly in your browser. No accounts or server-side data collection required.</p>
+  </section>
+
 </main>
 
 <footer>
-  <p>&copy; 2026 Free Online Tools. All rights reserved. &bull; <a href="#" onclick="showTool('about');return false;">About Us</a> &bull; <a href="#" onclick="showTool('contact');return false;">Contact Us</a></p>
+  <p>&copy; 2026 Free Online Tools. All rights reserved. &bull; <a href="#main-content">Back to top</a></p>
 </footer>
 
 <script>
+  // Tool switcher logic
   function showTool(toolId) {
     document.querySelectorAll('.tool-view').forEach(el => el.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
     
-    const targetTool = document.getElementById('tool-' + toolId);
-    if (targetTool) {
-      targetTool.classList.add('active');
-    }
-    
-    const targetBtn = document.querySelector(`[data-tool="${toolId}"]`);
-    if (targetBtn) {
-      targetBtn.classList.add('active');
-    }
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    document.getElementById('tool-' + toolId).classList.add('active');
+    document.querySelector(`[data-tool="${toolId}"]`)?.classList.add('active');
   }
 
+  function jumpToTool(toolId) {
+    showTool(toolId);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Tool 1: Word Counter
   function updateCounter() {
     const text = document.getElementById('counter-input').value;
     const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
     const chars = text.length;
     const sentences = text.trim() === '' ? 0 : text.split(/[.!?]+/).filter(Boolean).length;
-    const readTimeSec = Math.ceil(words / 238 * 60);
+    const readTimeSec = Math.ceil(words / 225 * 60);
     
     document.getElementById('c-words').textContent = words;
     document.getElementById('c-chars').textContent = chars;
@@ -606,79 +1730,99 @@
     document.getElementById('c-time').textContent = readTimeSec < 60 ? readTimeSec + 's' : Math.ceil(readTimeSec/60) + 'm';
   }
 
+  // Tool 2: Case Converter
   function convertCase(type) {
-    const input = document.getElementById('case-input').value;
-    let output = '';
-    if (type === 'upper') output = input.toUpperCase();
-    else if (type === 'lower') output = input.toLowerCase();
-    else if (type === 'title') {
-      output = input.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
-    } else if (type === 'sentence') {
-      output = input.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g, c => c.toUpperCase());
-    } else if (type === 'camel') {
-      output = input.replace(/(?:^\w|[A-Z]|\b\w)/g, (word, index) => index === 0 ? word.toLowerCase() : word.toUpperCase()).replace(/\s+/g, '');
-    } else if (type === 'alt') {
-      output = input.split('').map((c, i) => i % 2 === 0 ? c.toLowerCase() : c.toUpperCase()).join('');
+    const txt = document.getElementById('case-input').value;
+    let res = txt;
+    if (type === 'upper') res = txt.toUpperCase();
+    if (type === 'lower') res = txt.toLowerCase();
+    if (type === 'title') {
+      res = txt.toLowerCase().replace(/(^|\s)\S/g, l => l.toUpperCase());
     }
-    document.getElementById('case-output').textContent = output;
+    if (type === 'sentence') {
+      res = txt.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, c => c.toUpperCase());
+    }
+    if (type === 'camel') {
+      res = txt.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+    }
+    if (type === 'alt') {
+      res = txt.split('').map((char, i) => i % 2 === 0 ? char.toLowerCase() : char.toUpperCase()).join('');
+    }
+    document.getElementById('case-output').textContent = res;
   }
 
+  // Tool 3: JSON Formatter & Validator
   function formatJSON() {
+    const raw = document.getElementById('json-input').value;
+    const status = document.getElementById('json-status');
+    const output = document.getElementById('json-output');
     try {
-      const val = document.getElementById('json-input').value;
-      const parsed = JSON.parse(val);
-      document.getElementById('json-output').textContent = JSON.stringify(parsed, null, 2);
-      document.getElementById('json-status').innerHTML = '<span class="status-ok">✔ Valid JSON</span>';
+      const parsed = JSON.parse(raw);
+      output.textContent = JSON.stringify(parsed, null, 2);
+      status.className = 'status-ok';
+      status.textContent = '✓ Valid JSON';
     } catch (e) {
-      document.getElementById('json-status').innerHTML = `<span class="status-bad">✖ Invalid JSON: ${e.message}</span>`;
+      output.textContent = 'Invalid JSON: Could not format.';
+      status.className = 'status-bad';
+      status.textContent = '✕ ' + e.message;
     }
   }
 
   function minifyJSON() {
+    const raw = document.getElementById('json-input').value;
+    const status = document.getElementById('json-status');
+    const output = document.getElementById('json-output');
     try {
-      const val = document.getElementById('json-input').value;
-      const parsed = JSON.parse(val);
-      document.getElementById('json-output').textContent = JSON.stringify(parsed);
-      document.getElementById('json-status').innerHTML = '<span class="status-ok">✔ Minified Successfully</span>';
+      const parsed = JSON.parse(raw);
+      output.textContent = JSON.stringify(parsed);
+      status.className = 'status-ok';
+      status.textContent = '✓ Valid JSON (Minified)';
     } catch (e) {
-      document.getElementById('json-status').innerHTML = `<span class="status-bad">✖ Invalid JSON: ${e.message}</span>`;
+      output.textContent = 'Invalid JSON: Could not minify.';
+      status.className = 'status-bad';
+      status.textContent = '✕ ' + e.message;
     }
   }
 
+  // Tool 4: Password Generator
   function generatePassword() {
-    const length = document.getElementById('pw-length').value;
-    const upper = document.getElementById('pw-upper').checked;
-    const lower = document.getElementById('pw-lower').checked;
-    const numbers = document.getElementById('pw-numbers').checked;
-    const symbols = document.getElementById('pw-symbols').checked;
+    const len = document.getElementById('pw-length').value;
+    const useUpper = document.getElementById('pw-upper').checked;
+    const useLower = document.getElementById('pw-lower').checked;
+    const useNums = document.getElementById('pw-numbers').checked;
+    const useSyms = document.getElementById('pw-symbols').checked;
 
     let chars = '';
-    if (upper) chars += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    if (lower) chars += 'abcdefghijklmnopqrstuvwxyz';
-    if (numbers) chars += '0123456789';
-    if (symbols) chars += '!@#$%^&*()_+-=[]{}|;:,.<>?';
+    if (useUpper) chars += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    if (useLower) chars += 'abcdefghijklmnopqrstuvwxyz';
+    if (useNums) chars += '0123456789';
+    if (useSyms) chars += '!@#$%^&*()_+-=[]{}|;:,.<>?';
 
     if (!chars) {
-      document.getElementById('pw-output').textContent = 'Please select at least one option!';
+      document.getElementById('pw-output').textContent = 'Please select at least one character set.';
       return;
     }
 
-    let password = '';
-    for (let i = 0; i < length; i++) {
-      password += chars.charAt(Math.floor(Math.random() * chars.length));
+    let pw = '';
+    const array = new Uint32Array(len);
+    window.crypto.getRandomValues(array);
+    for (let i = 0; i < len; i++) {
+      pw += chars[array[i] % chars.length];
     }
-    document.getElementById('pw-output').textContent = password;
+    document.getElementById('pw-output').textContent = pw;
   }
 
+  // Tool 5: QR Generator
+  let qrcodeObj = null;
   function generateQR() {
-    const val = document.getElementById('qr-input').value;
+    const val = document.getElementById('qr-input').value.trim();
     const container = document.getElementById('qr-canvas');
     container.innerHTML = '';
     if (!val) return;
-    new QRCode(container, {
+    qrcodeObj = new QRCode(container, {
       text: val,
-      width: 180,
-      height: 180,
+      width: 200,
+      height: 200,
       colorDark: "#000000",
       colorLight: "#ffffff",
       correctLevel: QRCode.CorrectLevel.H
@@ -687,27 +1831,31 @@
 
   function downloadQR() {
     const img = document.querySelector('#qr-canvas img');
-    if (!img) {
-      generateQR();
+    const canvas = document.querySelector('#qr-canvas canvas');
+    let dataUrl = '';
+    if (img && img.src) {
+      dataUrl = img.src;
+    } else if (canvas) {
+      dataUrl = canvas.toDataURL('image/png');
     }
-    setTimeout(() => {
-      const activeImg = document.querySelector('#qr-canvas img');
-      if (activeImg) {
-        const link = document.createElement('a');
-        link.download = 'qrcode.png';
-        link.href = activeImg.src;
-        link.click();
-      }
-    }, 200);
+    if (!dataUrl) {
+      alert('Please generate a QR code first.');
+      return;
+    }
+    const link = document.createElement('a');
+    link.href = dataUrl;
+    link.download = 'qrcode.png';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   }
 
-  function copyText(elementId) {
-    const text = document.getElementById(elementId).textContent;
-    navigator.clipboard.writeText(text).then(() => {
-      alert('Copied to clipboard!');
-    });
-  }
+  // Run initial QR generation on load
+  window.addEventListener('DOMContentLoaded', () => {
+    generateQR();
+  });
 
+  // Articles Hub Filter
   function setArticleFilter(category) {
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.classList.remove('active');
@@ -727,15 +1875,15 @@
     });
   }
 
-  function jumpToTool(toolId) {
-    showTool(toolId);
+  // Universal Copy Utility
+  function copyText(elementId) {
+    const text = document.getElementById(elementId).textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      alert('Copied to clipboard!');
+    }).catch(err => {
+      console.error('Failed to copy text: ', err);
+    });
   }
-
-  // Initial generation on load
-  window.onload = function() {
-    generatePassword();
-    generateQR();
-  };
 </script>
 </body>
 </html>
