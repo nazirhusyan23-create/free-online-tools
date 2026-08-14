@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  This is a single-page app: every tool and all 60+ articles live at one
+  URL (the homepage) and are already server-rendered into that page's HTML,
+  so Google indexes them as one comprehensive document. A sitemap for an
+  SPA like this only needs one <url> entry -- do NOT add #anchor URLs
+  (e.g. /#tool-json or /#article-xyz): Google ignores URL fragments, so
+  entries like that would just be duplicate, wasted crawl budget.
+
+  Update <lastmod> whenever you meaningfully change page content (new
+  articles, tool changes, etc.), then resubmit this file in Google Search
+  Console / Bing Webmaster Tools.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://your-domain.vercel.app/</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
